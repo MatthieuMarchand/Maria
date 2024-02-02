@@ -1,0 +1,20 @@
+// -------- VARIABLES --------
+$black-background: #2D2D2D;
+$yellow-text: #FEF2E2;
+
+
+// -------- FONTS ------------
+@font-face {
+    font-family: 'Fraunces';
+    src: url('/fonts/Fraunces/Fraunces-VariableFont.ttf');
+    font-style: normal;
+}
+
+
+// -------- MIXINS -----------
+@mixin fraunces($size: 16, $weight: 400, $color: $yellow-text) {
+    font-family: 'Fraunces', sans-serif;
+    font-size: #{$size}px;
+    font-weight: $weight;
+    color: $color;
+}
