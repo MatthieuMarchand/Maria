@@ -3,6 +3,8 @@
 
 html {
   background: $black-background;
+  display: flex;
+  justify-content: center;
 }
 
 html, html *, * * {
@@ -13,6 +15,7 @@ main {
   position: relative;
   height: 100vh;
   width: 100vw;
+  max-width: 500px;
 }
 
 button {
