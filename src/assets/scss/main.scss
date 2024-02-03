@@ -18,7 +18,89 @@ main {
   max-width: $max-width-desktop;
 }
 
+// ------ Button ------
 button {
   background: none;
   border: none;
+}
+.button-link {
+  span {
+    position: relative;
+  }
+  span::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: .5px solid;
+  }
+  span:hover::after {
+    animation: button-line-start .6s ease-in-out forwards;
+  }
+  span.active::after {
+    animation: button-line-end .6s ease-in-out forwards;
+  }
+}
+@keyframes button-line-start {
+  0% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  49.99% {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: .5px solid;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  50% {
+    left: -5%;
+    width: 110%;
+    height: 60%;
+    border-bottom: 2px solid;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    left: -5%;
+    width: 110%;
+    height: 60%;
+    border-bottom: 2px solid;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+@keyframes button-line-end {
+  0% {
+    left: -5%;
+    width: 110%;
+    height: 60%;
+    border-bottom: 2px solid;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  49.99% {
+    left: -5%;
+    width: 110%;
+    height: 60%;
+    border-bottom: 2px solid;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: .5px solid;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }

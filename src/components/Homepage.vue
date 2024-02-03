@@ -2,10 +2,10 @@
     <main id="main_HomePage">
         <img src="/images/tree-with-door.svg" alt="">
         <div>
-            <button class="play">
+            <button class="button-link play">
                 <span>lancer le jeu</span>
             </button>
-            <button>
+            <button class="button-link">
                 <span>crédits</span>
             </button>
         </div>
@@ -25,6 +25,7 @@
         position: absolute;
         width: 100%;
         top: 0;
+        animation: img-floating 2s ease-in-out infinite alternate;
     }
     div {
         position: absolute;
@@ -33,9 +34,6 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        button span {
-            border-bottom: .5px solid;
-        }
         button.play {
             margin-bottom: 1rem;
             span {
@@ -57,6 +55,15 @@
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes img-floating {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(5%);
     }
 }
 
