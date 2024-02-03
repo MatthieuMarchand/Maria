@@ -15,6 +15,7 @@
 @import '../assets/scss/settings.scss';
 
 #main_LoadingPage {
+    overflow: hidden;
     z-index: 1;
     position: absolute;
     background: $black-background;
@@ -22,7 +23,7 @@
     justify-content: center;
     align-items: center;
     opacity: 1;
-    animation: LoadingPage_opacity .4s ease-out 1.1s forwards;
+    animation: LoadingPage_opacity .45s ease-out 2.15s forwards;
     h1 {
         position: relative;
         @include fraunces(48, 700);
@@ -34,7 +35,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        animation: LoadingPage_footer_translate .8s ease-out;
+        opacity: 0;
+        transform: translate(0, 100%);
+        animation: LoadingPage_footer_translate 1s ease-in-out .4s forwards;
         p {
             margin-bottom: .5rem;
         }
@@ -49,12 +52,13 @@
     display: block;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: scaleX(0);
-    border-bottom: 1px solid $yellow-text;
-    animation: LoadingPage_H1After_line .8s ease-out .4s;
+    left: 50%;
+    width: 110%;
+    height: 62%;
+    transform: scaleX(0) translate(-50%);
+    transform-origin: -50%;
+    border-bottom: 3px solid $yellow-text;
+    animation: LoadingPage_H1After_line .8s ease-in-out 1.4s forwards;
 }
 
 @keyframes LoadingPage_opacity {
@@ -68,35 +72,37 @@
 
 @keyframes LoadingPage_H1After_line {
     0% {
-        transform: scaleX(0);
-        transform-origin: left;
-    }
-    49.99% {
-        transform: scaleX(1);
-        transform-origin: left;
-    }
-    50% {
-        transform: scaleX(1);
-        transform-origin: right;
+        transform: scaleX(0) translate(-50%);
     }
     100% {
-        transform: scaleX(0);
-        transform-origin: right;
+        transform: scaleX(1) translate(-50%);
     }
 }
 // @keyframes LoadingPage_H1After_line {
-//     from {
-//         transform: scaleX(0);
+//     0% {
+//         transform: scaleX(0) translate(-50%);
+//         transform-origin: -50%;
 //     }
-//     to {
-//         transform: scaleX(1);
+//     45% {
+//         transform: scaleX(1) translate(-50%);
+//         transform-origin: -50%;
+//     }
+//     55% {
+//         transform: scaleX(1) translate(-50%);
+//         transform-origin: 100%;
+//     }
+//     100% {
+//         transform: scaleX(0) translate(-50%);
+//         transform-origin: 100%;
 //     }
 // }
 
 @keyframes LoadingPage_footer_translate {
     from {
+        transform: translate(0, 100%);
+    }
+    20% {
         opacity: 0;
-        transform: translate(0, 80%);
     }
     to {
         opacity: 1;
