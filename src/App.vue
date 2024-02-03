@@ -1,9 +1,11 @@
 <template>
-  <Homepage/>
+  <LoadingPage/>
+  <HomePage/>
 </template>
 
 <script setup>
-import Homepage from '@/components/Homepage.vue';
+  import LoadingPage from '@/components/LoadingPage.vue';
+  import HomePage from '@/components/Homepage.vue';
 </script>
 
 <style lang="scss">

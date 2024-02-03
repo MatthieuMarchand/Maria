@@ -3,5 +3,19 @@
 
 html {
   background: $black-background;
+}
+
+html, html *, * * {
   @include fraunces();
+}
+
+main {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+button {
+  background: none;
+  border: none;
 }
