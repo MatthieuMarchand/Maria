@@ -1,6 +1,6 @@
 <template>
     <main id="main_HomePage">
-        <img src="/images/tree-with-door.svg" alt="">
+        <img src="/images/tree-with-door.svg" alt="Arbre avec une porte à l'intérieur">
         <div>
             <button class="button-link play">
                 <span>lancer le jeu</span>
@@ -25,6 +25,8 @@
         position: absolute;
         width: 100%;
         top: 0;
+        scale: 1.02;
+        transform: translateY(3%);
         animation: img-floating 1.6s ease-in-out infinite alternate;
     }
     div {
@@ -60,10 +62,10 @@
 
 @keyframes img-floating {
     0% {
-        transform: translateY(0%);
+        transform: translateY(3%);
     }
     100% {
-        transform: translateY(3%);
+        transform: translateY(6%);
     }
 }
 
