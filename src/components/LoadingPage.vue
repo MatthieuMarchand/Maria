@@ -17,7 +17,7 @@
 #main_LoadingPage {
     overflow: hidden;
     z-index: 1;
-    position: absolute;
+    position: fixed;
     background: $black-background;
     display: flex;
     justify-content: center;

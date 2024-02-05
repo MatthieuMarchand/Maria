@@ -1,5 +1,5 @@
 # Maria
-### Project for the bacchanight 2024
+Project for the bacchanight 2024
 
 ## Project Setup
 ```sh
