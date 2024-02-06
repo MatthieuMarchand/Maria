@@ -7,7 +7,6 @@
 <script setup>
   // import LoadingPage from '@/components/LoadingPage.vue';
   // import HomePage from '@/components/Homepage.vue';
-  import HomePage from '@/components/PaintingPage.vue';
   import PaintingPage from "@/components/PaintingPage.vue";
 
 </script>

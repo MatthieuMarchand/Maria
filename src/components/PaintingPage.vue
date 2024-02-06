@@ -1,9 +1,12 @@
 <template>
     <main id="main_PaintingPage">
+
         <div class="image-container">
-            <img src="/images/Pictures/Painting1-deux-petites-filles/Painting1-flower.png" alt="Les deux fillettes" />
+            <img src="/images/pictures/Painting1-deux-petites-filles/Painting1-flower.png" alt="Les deux fillettes" />
         </div>
-        <div class="image-dialog">
+
+        <div class="dialog">
+
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo
             perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum
@@ -21,12 +24,13 @@
             voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque
             magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus.
           </p>
+
           <button class="button-next">
-            <span>
-              Passer aux choix
-            </span>
+            <span>Passer au choix</span>
           </button>
+
         </div>
+
     </main>
 </template>
 
@@ -37,27 +41,24 @@
 @import '../assets/scss/settings.scss';
 
 #main_PaintingPage {
-    ::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: unset;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 5rem;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-
     box-sizing: border-box;
     max-height: 100vh;
     overflow: hidden;
     padding-bottom: 5rem;
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+        background: unset;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5rem;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
 
     .image-container {
         position: relative;
@@ -84,34 +85,30 @@
     }
 
     img {
+        z-index: 0;
         position: relative;
         width: 100%;
         height: 27rem;
         object-fit: cover;
-        z-index: 0;
     }
-
-    .image-dialog {
-        position: relative;
+    .dialog {
         overflow: auto;
         margin: -2rem 1rem 1rem;
         max-height: 10rem;
         padding: 4rem 1rem 0;
-        z-index: 5;
+        display: grid;
+        grid-template-columns: 1fr;
     }
 
     .button-next{
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
+      cursor: pointer;
+      margin: 2rem auto;
       padding: 1rem 2rem 1rem 2rem;
-      margin-top: 2rem;
       background-color: $yellow-text;
       border-radius: 5px;
 
       span{
         color: $black-background;
-
       }
     }
 }
