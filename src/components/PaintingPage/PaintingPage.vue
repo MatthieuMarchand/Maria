@@ -38,7 +38,7 @@
 </script>
 
 <style lang="scss">
-@import '../assets/scss/settings.scss';
+@import '../../assets/scss/settings';
 
 #main_PaintingPage {
     box-sizing: border-box;
