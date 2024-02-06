@@ -10,9 +10,9 @@ import { ref } from 'vue';
 const cardsContainer = ref(null);
 
 const cards = [
-  { id: 'card-rose', src: '/images/cards/card-rose.svg', alt: 'Carte de tarot avec le signe d\'une rose' },
-  { id: 'card-chalice', src: '/images/cards/card-rose.svg', alt: 'Carte de tarot avec le signe d\'un calice' },
-  { id: 'card-sword', src: '/images/cards/card-rose.svg', alt: 'Carte de tarot avec le signe d\'une épée' }
+  { id: 'card-rose', src: '/images/cards/card-rose.webp', alt: 'Carte de tarot avec le signe d\'une rose' },
+  { id: 'card-chalice', src: '/images/cards/card-rose.webp', alt: 'Carte de tarot avec le signe d\'un calice' },
+  { id: 'card-sword', src: '/images/cards/card-rose.webp', alt: 'Carte de tarot avec le signe d\'une épée' }
 ];
 
 const handleCardClick = (card) => {
