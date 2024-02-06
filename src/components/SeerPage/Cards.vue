@@ -55,6 +55,7 @@ function removeClasses(element) {
   .card {
     transition-duration: .4s;
     cursor: pointer;
+    width: 86px;
   }
 
   #card-rose {
