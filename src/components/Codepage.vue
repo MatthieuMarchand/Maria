@@ -2,23 +2,24 @@
   <main id="main_Codepage">
     <div class="dialogue">
       <div class="dialogue-bubble">
-        <p class="dialogue-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cupiditate debitis facilis mollitia necessitatibus nostrum placeat provident ullam, vel veritatis. Alias animi, culpa distinctio eius eligendi fuga iusto nemo quos?</p>
-        <button class="button-bubble">Suivant</button>
+        <p class="dialogue-text">La voyante vous demande de trouver le tableau Paysages avec figures ou Les deux fillettes</p>
       </div>
     </div>
 
     <div id="map">
-      <img src="" alt="plan du musée pour aller au prochain tableau">
+      <img src="/images/MapStep1.webp" alt="plan du musée pour aller au prochain tableau">
     </div>
 
     <div id="codeContainer">
       <p class="enter-code">Entrer le code</p>
-      <p class="code">CODE</p>
-      <button class="button-link validate">
-        Valider
-      </button>
+      <input class="input-code" placeholder="AE8XD">
+    <button class="button validate">
+      Valider
+    </button>
     </div>
-    <button class="button-link no-code">Pas de code.</button>
+    <button class="button-link no-code">
+      <span>Vous n'avez pas trouvé le code ?</span>
+    </button>
 
   </main>
 
@@ -32,13 +33,13 @@
 @import '../assets/scss/settings.scss';
 
 #main_Codepage{
-  background-color: lightslategray;
   position: relative;
+
   .dialogue {
-    padding: 3.5rem 1rem 0 1rem;
-    margin-bottom: 2.25rem;
+    padding-top: 3.5rem;
 
     .dialogue-bubble{
+      margin: 0 2rem 2rem 2rem;
       background-color: $yellow-text;
       border-radius: 1rem;
       position: relative;
@@ -46,64 +47,70 @@
       .dialogue-text{
         padding: 1rem;
         @include fraunces();
-        color: $black-background
-      }
-
-      .button-bubble{
-        position: absolute;
-        right: 0;
-        bottom: -1rem;
-        align-items: end;
-
-        @include fraunces(24, 400, $black-background);
-        background-color: $yellow-text;
-        border-radius: 0 0 1rem 1rem;
-
+        color: $black-background;
+        font-size: 14px;
       }
     }
   }
 
   #map {
-    background-color: #2D2D2D;
-    margin: 0 1rem 1rem 1rem;
-    height: 400px;
-    image{
+    margin: 0 2rem 2rem 2rem;
 
+    img{
+      width: 100%;
     }
-
   }
 
   #codeContainer{
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: baseline;
+    padding-left: 2rem;
+    padding-right: 2rem;
 
     .enter-code {
-      margin-bottom: 2rem;
+      margin-bottom: 0.5rem;
+      @include fraunces();
+      font-size: 18px;
     }
 
-    .code {
-      color: $black-background;
-      padding: 0.5rem;
-      padding-right: 8rem;
-      background-color: $yellow-text;
+    .input-code {
+      width: 100%;
       margin-bottom: 1rem;
+      padding: 1rem;
+      border: unset;
+      color: $black-background;
+      background-color: white;
+      border-radius: 5px;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: $placeholder-color;
+        font-size: 16px;
+      }
     }
 
     .validate {
+      position: absolute;
+      bottom: -3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 1rem 2rem 1rem 2rem;
+      border-radius: 5px;
+
       color: $black-background;
-      padding: 0.5rem;
       background-color: $yellow-text;
     }
-
   }
 
     .no-code {
-      text-decoration: underline;
       position: absolute;
       bottom: 3rem;
       left: 50%;
       transform: translateX(-50%);
+      font-size: 12px;
+      width: 100%;
     }
 
 }
