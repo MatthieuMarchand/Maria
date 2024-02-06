@@ -16,7 +16,7 @@
 </script>
 
 <style lang="scss">
-@import '../assets/scss/settings.scss';
+@import '../../assets/scss/settings';
 
 #main_HomePage {
     opacity: 0;

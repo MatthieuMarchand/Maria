@@ -16,6 +16,13 @@ main {
   height: 100svh;
   width: 100vw;
   max-width: $max-width-desktop;
+  overflow: hidden;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
 }
 
 // ------ Button ------

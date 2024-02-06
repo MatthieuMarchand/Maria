@@ -1,0 +1,42 @@
+<template>
+  <main id="main_WindowChoice">
+
+    <p>La rose incarne la vie et le renouveau, offrant espoir et vitalité même dans les moments les plus sombres.</p>
+
+    <button class="button-link play-card">
+      <span>Jouer la carte</span>
+    </button>
+
+    <button class="button-link cancel">
+      <span>Annuler</span>
+    </button>
+
+  </main>
+</template>
+
+<script setup>
+</script>
+
+<style lang="scss">
+@import '../../assets/scss/settings';
+#main_WindowChoice {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgba($black-background, .9);
+
+  p {
+    margin: 0 3rem 6rem 3rem;
+  }
+  .play-card {
+    margin-bottom: 1.5rem;
+  }
+  .cancel {
+    margin-bottom: 2rem;
+  }
+}
+</style>
