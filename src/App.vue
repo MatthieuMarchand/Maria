@@ -3,6 +3,7 @@
 <!--  <HomePage/>-->
   <SeerPage/>
 <!-- <PaintingPage/>-->
+<!--  pour push develop-->
 </template>
 
 <script setup>
