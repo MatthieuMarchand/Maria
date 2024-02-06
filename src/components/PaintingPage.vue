@@ -2,7 +2,7 @@
     <main id="main_PaintingPage">
 
         <div class="image-container">
-            <img src="/images/pictures/Painting1-deux-petites-filles/Painting1-flower.png" alt="Les deux fillettes" />
+            <img src="/images/Pictures/Painting1-deux-petites-filles/Painting1-flower.png" alt="Les deux fillettes" />
         </div>
 
         <div class="dialog">
