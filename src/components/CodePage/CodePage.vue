@@ -1,13 +1,9 @@
 <template>
   <main id="main_CodePage">
 
-    <div class="dialogue">
-      <div class="dialogue-bubble">
-        <p class="dialogue-text">La voyante vous demande de trouver le tableau Paysages avec figures ou Les deux fillettes</p>
-      </div>
-    </div>
+    <Dialogue class="component-dialogue" :dialogues="dialogues"/>
 
-    <img src="/images/museum-maps/mapStep1.webp" alt="plan du musée pour aller au prochain tableau">
+    <img src="/images/museum-maps/map-step-1.webp" alt="plan du musée pour aller au prochain tableau">
 
     <div id="inputContainer">
       <label for="code-picture">Entrer le code</label>
@@ -25,6 +21,13 @@
 
 <script setup>
 
+  import Dialogue from "@/components/Dialogue.vue";
+
+  const dialogues = [
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, aliquam ea eius enim excepturi hic in iusto laborum modi natus nemo odit provident sed sequi sint ullam voluptatem. Harum, velit?",
+    "Aliquam, asperiores autem consequatur deleniti dolore ducimus harum incidunt itaque iusto nostrum nulla, officiis quam qui reiciendis reprehenderit unde velit veritatis vero voluptatibus voluptatum? Culpa illum minima numquam quo temporibus!",
+    "Accusamus amet atque blanditiis cumque doloremque eius eveniet illum laborum maiores molestiae officiis, suscipit velit voluptate! Commodi ea earum et ipsam minima numquam pariatur quae quam quo quod? Accusantium, debitis.",
+  ];
 </script>
 
 <style lang="scss">
@@ -34,6 +37,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  .component-dialogue {
+    margin-bottom: 4rem;
+  }
 
   img{ // MAP
     margin: 0 2rem 2rem 2rem;
@@ -46,31 +53,6 @@
     bottom: 1rem;
     margin: auto auto;
     width: 100%;
-  }
-}
-
-#main_CodePage .dialogue {
-
-  .dialogue-bubble{
-    position: relative;
-    margin: 0 2rem 2rem 2rem;
-    background-color: $yellow-text;
-    border-radius: 1rem;
-
-    .dialogue-text{
-      padding: 1rem;
-      @include fraunces($size: 14, $color: $black-background);
-    }
-
-    .button-bubble{
-      position: absolute;
-      right: 0;
-      bottom: -1rem;
-      align-items: end;
-      @include fraunces($size: 24, $color: $black-background);
-      background-color: $yellow-text;
-      border-radius: 0 0 1rem 1rem;
-    }
   }
 }
 

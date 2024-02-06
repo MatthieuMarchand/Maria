@@ -13,5 +13,5 @@
 </script>
 
 <style lang="scss">
-  @import './assets/scss/settings.scss';
+@import './assets/scss/settings.scss';
 </style>
