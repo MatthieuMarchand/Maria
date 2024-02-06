@@ -1,15 +1,9 @@
 <template>
-<!--  <LoadingPage/>-->
-<!--  <HomePage/>-->
-<!--  <SeerPage/>-->
- <PaintingPage/>
+  <CodePage/>
 </template>
 
 <script setup>
-  // import LoadingPage from '@/components/HomePage/LoadingPage.vue';
-  // import HomePage from '@/components/HomePage/Homepage.vue';
-  // import SeerPage from '@/components/SeerPage/SeerPage.vue';
-  import PaintingPage from "@/components/PaintingPage/PaintingPage.vue";
+import CodePage from '@/components/CodePage/CodePage.vue';
 </script>
 
 <style lang="scss">
