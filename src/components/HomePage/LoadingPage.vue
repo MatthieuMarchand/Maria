@@ -12,7 +12,7 @@
 </script>
 
 <style lang="scss">
-@import '../assets/scss/settings.scss';
+@import '../../assets/scss/settings';
 
 #main_LoadingPage {
     overflow: hidden;
