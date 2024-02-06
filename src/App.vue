@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-  import CodePage from '@/components/CodePage/CodePage.vue';
+import CodePage from '@/components/CodePage/CodePage.vue';
 </script>
 
 <style lang="scss">
