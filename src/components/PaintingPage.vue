@@ -1,9 +1,10 @@
 <template>
     <main id="main_PaintingPage">
         <div class="image-container">
-            <img src="/images/painting1.webp" alt="Les deux fillettes" />
+            <img src="/images/Pictures/Painting1-deux-petites-filles/Painting1-flower.png" alt="Les deux fillettes" />
         </div>
-        <p class="image-dialog">
+        <div class="image-dialog">
+          <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo
             perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum
             optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum
@@ -19,13 +20,22 @@
             Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate
             voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque
             magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus.
-        </p>
+          </p>
+          <button class="button-next">
+            <span>
+              Passer aux choix
+            </span>
+          </button>
+        </div>
     </main>
 </template>
 
-<script setup></script>
+<script setup>
+</script>
 
 <style lang="scss">
+@import '../assets/scss/settings.scss';
+
 #main_PaintingPage {
     ::-webkit-scrollbar {
         width: 5px;
@@ -77,7 +87,8 @@
         position: relative;
         z-index: 20;
         width: 100%;
-        height: auto;
+        height: 27rem;
+        object-fit: cover;
         z-index: 0;
     }
 
@@ -86,8 +97,23 @@
         overflow: auto;
         margin: -2rem 1rem 1rem;
         max-height: 10rem;
-        padding: 5rem 2rem 0;
+        padding: 4rem 1rem 0;
         z-index: 5;
+    }
+
+    .button-next{
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 1rem 2rem 1rem 2rem;
+      margin-top: 2rem;
+      background-color: $yellow-text;
+      border-radius: 5px;
+
+      span{
+        color: $black-background;
+
+      }
     }
 }
 </style>
