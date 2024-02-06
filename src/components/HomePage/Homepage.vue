@@ -1,18 +1,20 @@
 <template>
-    <main id="main_HomePage">
-        <img src="/images/tree-with-door.svg" alt="Arbre avec une porte à l'intérieur">
-        <div>
-            <button class="button-link play">
-                <span>lancer le jeu</span>
-            </button>
-            <button class="button-link">
-                <span>crédits</span>
-            </button>
-        </div>
-    </main>
+  <LoadingPage/>
+  <main id="main_HomePage">
+      <img src="/images/tree-with-door.svg" alt="Arbre avec une porte à l'intérieur">
+      <div>
+          <button class="button-link play">
+              <span>lancer le jeu</span>
+          </button>
+          <button class="button-link">
+              <span>crédits</span>
+          </button>
+      </div>
+  </main>
 </template>
 
 <script setup>
+  import LoadingPage from "@/components/HomePage/LoadingPage.vue";
 </script>
 
 <style lang="scss">

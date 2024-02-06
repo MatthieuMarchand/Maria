@@ -9,9 +9,9 @@
 
     <img src="/images/museum-maps/mapStep1.webp" alt="plan du musée pour aller au prochain tableau">
 
-    <div id="codeContainer">
-      <label for="code">Entrer le code</label>
-      <input name="code" class="input-code" placeholder="Exemple : &nbsp; A1E2T">
+    <div id="inputContainer">
+      <label for="code-picture">Entrer le code</label>
+      <input name="code-picture" placeholder="Exemple : &nbsp; A1E2T">
       <button class="validate-code">Valider</button>
     </div>
 
@@ -74,7 +74,7 @@
   }
 }
 
-#main_CodePage #codeContainer{
+#main_CodePage #inputContainer{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -88,7 +88,7 @@
     font-size: 18px;
   }
 
-  .input-code {
+  input {
     width: 100%;
     margin-bottom: 1rem;
     padding: 1rem;
@@ -97,7 +97,9 @@
     background-color: white;
     border-radius: .5rem;
     box-sizing: border-box;
+    text-transform: uppercase;
     &::placeholder {
+      text-transform: none;
       color: $placeholder-color;
     }
   }
