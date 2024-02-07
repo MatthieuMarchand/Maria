@@ -3,7 +3,7 @@
   <div>
     <HomePage
         v-if="currentPage === pages.HOME_PAGE"
-        @update-page="newPage => updatePage(newPage)"
+        @change-page="newPage => changePage(newPage)"
     />
 
   <div>
@@ -42,7 +42,7 @@
 
   let currentPage = ref(pages.HOME_PAGE);
 
-  const updatePage = (newPage) => {
+  const changePage = (newPage) => {
     currentPage.value = newPage;
   }
 </script>
