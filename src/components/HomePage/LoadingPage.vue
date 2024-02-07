@@ -10,18 +10,16 @@
 @import '../../assets/scss/settings';
 
 #main_LoadingPage {
-    overflow: hidden;
-    z-index: 1;
-    position: fixed;
+    align-items: center;
+    animation: LoadingPage_opacity 0.45s ease-out 2.15s forwards;
     background-image: url('/images/backgrounds/crystal-ball-on.png');
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
-    align-items: center;
     opacity: 1;
-    animation: LoadingPage_opacity 0.45s ease-out 2.15s forwards;
+    overflow: hidden;
 
     h1 {
         position: relative;
@@ -30,17 +28,17 @@
 }
 
 #main_LoadingPage h1::after {
+    animation: LoadingPage_H1After_line 0.8s ease-in-out 0.5s forwards;
+    border-bottom: 3px solid $yellow-text;
     content: '';
     display: block;
+    height: 62%;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 62%;
     transform: scaleX(0);
     transform-origin: center left;
-    border-bottom: 3px solid $yellow-text;
-    animation: LoadingPage_H1After_line 0.8s ease-in-out 0.5s forwards;
+    width: 100%;
 }
 
 @keyframes LoadingPage_opacity {
@@ -48,8 +46,8 @@
         opacity: 1;
     }
     to {
-        opacity: 0;
         display: none;
+        opacity: 0;
     }
 }
 
