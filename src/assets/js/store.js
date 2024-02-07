@@ -3,7 +3,7 @@ import { pages } from './Enums.js';
 
 export const useStore = defineStore('app', {
     state: () => ({
-        page: pages.HOME_PAGE,
+        page: pages.CODE_PAGE,
     }),
     actions: {
         updateCurrentPage(newPage) {

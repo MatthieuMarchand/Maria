@@ -1,7 +1,5 @@
 <template>
     <div>
-        <HomePage v-if="currentPage === pages.HOME_PAGE" @update-page="newPage => updatePage(newPage)" />
-
         <div>
             <HomePage v-if="currentPage === pages.HOME_PAGE" />
 
