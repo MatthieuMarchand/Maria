@@ -1,13 +1,14 @@
 import { defineStore } from 'pinia';
-import { pages } from './Enums.js';
+import { pages } from './config.js';
 
 export const useStore = defineStore('app', {
     state: () => ({
-        page: pages.HOME_PAGE,
+        page: pages.SEER_PAGE,
+        data: null,
     }),
     actions: {
         updateCurrentPage(newPage) {
             this.page = newPage;
         },
-    },
+    }
 });

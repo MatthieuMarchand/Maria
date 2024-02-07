@@ -39,7 +39,7 @@
 </template>
 
 <script setup>
-import { pages } from '@/assets/js/Enums.js'
+import { pages } from '@/assets/js/config.js'
 import { useStore } from '/src/assets/js/store.js'
 
 const store = useStore()

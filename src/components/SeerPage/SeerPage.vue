@@ -1,5 +1,9 @@
 <template>
     <main id="main_SeerPage">
+        <Dialogue
+            :v-if="dialoguesLoaded"
+            :dialogues="dialogues"
+        />
         <img id="seer" src="/images/seer.svg" alt="La voyante" />
 
         <div id="table"></div>
@@ -9,7 +13,30 @@
 </template>
 
 <script setup>
-import Cards from './Cards.vue'
+import Cards from '@/components/SeerPage/Cards.vue'
+import Dialogue from '@/components/SeerPage/Dialogue.vue'
+import { fetchData } from '@/assets/js/config.js'
+import { ref } from 'vue'
+
+let dialogues = [];
+let dialoguesLoaded = ref(false);
+
+const getDialogues = async () => {
+    await fetchData().then(data => {
+
+        data.screens[0].dialogs.forEach(dialog => {
+            dialogues.push(dialog)
+        })
+
+    }).then(() => {
+        dialoguesLoaded = ref(true);
+    }).catch(error => {
+        console.error('Erreur lors de la récupération des données:', error);
+        dialogues = ["Erreur 404 :("];
+    });
+};
+getDialogues();
+
 </script>
 
 <style lang="scss">

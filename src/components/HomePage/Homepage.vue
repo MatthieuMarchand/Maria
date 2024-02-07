@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { pages } from '/src/assets/js/Enums.js'
+import { pages } from '/src/assets/js/config.js'
 import LoadingPage from '@/components/HomePage/LoadingPage.vue'
 import { useStore } from '/src/assets/js/store.js'
 
@@ -31,7 +31,7 @@ const updateCurrentPage = newPage => {
 @import '../../assets/scss/settings';
 
 #main_HomePage {
-    animation: HomePage_opacity 1.6s ease-out 2.6s forwards;
+    animation: HomePage_opacity 1.6s ease-out 1.8s forwards;
     background-image: url('/images/backgrounds/neutral-bg.png');
     background-position: center bottom;
     background-repeat: no-repeat;

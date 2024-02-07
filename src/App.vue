@@ -17,7 +17,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useStore } from '@/assets/js/store.js'
-import { pages } from '/src/assets/js/Enums.js'
+import { pages } from '/src/assets/js/config.js'
 
 import HomePage from '@/components/HomePage/Homepage.vue'
 import CodePage from '@/components/CodePage/CodePage.vue'

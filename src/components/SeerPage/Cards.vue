@@ -13,7 +13,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { cards } from '/src/assets/js/Enums.js';
+import { cards } from '/src/assets/js/config.js';
 import WindowChoice from "@/components/SeerPage/WindowChoice.vue";
 
 const windowChoiceRef = ref(null);

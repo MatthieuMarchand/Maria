@@ -1,3 +1,4 @@
+import yaml from "js-yaml";
 export const pages = {
     HOME_PAGE: 'HomePage',
     CODE_PAGE: 'CodePage',
@@ -27,3 +28,8 @@ export const cards = [
         alt: "Carte de tarot avec le signe d'une épée"
     }
 ]
+export async function fetchData() {
+    const response = await fetch('/src/assets/data.yaml');
+    const yamlContent = await response.text();
+    return yaml.load(yamlContent);
+}

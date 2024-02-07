@@ -1,14 +1,17 @@
 <template>
   <div class="dialogue">
+
     <p v-html="currentDialogue"></p>
+
     <button @click="nextDialogue" id="button-next" class="button-link">
       <span>Suivant</span>
     </button>
+
   </div>
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue';
+import { ref, defineProps, watch, onMounted } from 'vue';
 
 const props = defineProps(['dialogues']);
 const count = ref(0);
@@ -22,17 +25,21 @@ function nextDialogue() {
   }
 }
 
-watch(count, () => {
-  currentDialogue.value = props.dialogues[count.value];
+onMounted(() => {
+  setTimeout(() => {
+    currentDialogue.value = props.dialogues[count.value].text;
+  }, 500);
 });
 
-onMounted(() => {
-  currentDialogue.value = props.dialogues[count.value];
+watch(count, () => {
+    currentDialogue.value = props.dialogues[count.value].text;
 });
+
+
 </script>
 
 <style lang="scss">
-@import '../assets/scss/settings';
+@import '../../assets/scss/settings';
 
 .dialogue {
   position: relative;
