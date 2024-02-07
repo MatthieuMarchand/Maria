@@ -1,9 +1,12 @@
 <template>
+    <LoadingPage />
     <main id="main_HomePage">
-        <img src="/images/tree-with-door.svg" alt="Arbre avec une porte à l'intérieur">
+        <div class="homepage-tree-container">
+            <img src="/images/tree.svg" alt="Arbre avec une porte à l'intérieur" />
+        </div>
         <div>
-            <button class="button-link play">
-                <span>lancer le jeu</span>
+            <button @click="updateCurrentPage(pages.SEER_PAGE)" class="button-link play">
+                <span>Ouvrir la porte</span>
             </button>
             <button class="button-link">
                 <span>crédits</span>
@@ -13,41 +16,58 @@
 </template>
 
 <script setup>
+import { pages } from '/src/assets/js/Enums.js'
+import LoadingPage from '@/components/HomePage/LoadingPage.vue'
+import { useStore } from '/src/assets/js/store.js'
+
+const store = useStore()
+
+const updateCurrentPage = newPage => {
+    store.updateCurrentPage(newPage)
+}
 </script>
 
 <style lang="scss">
 @import '../../assets/scss/settings';
 
 #main_HomePage {
-    opacity: 0;
     animation: HomePage_opacity 1.6s ease-out 2.6s forwards;
-    img {
-        position: absolute;
+    background-image: url('/images/backgrounds/neutral-bg.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+
+    .homepage-tree-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        position: relative;
+        top: 1rem;
         width: 100%;
-        top: 0;
-        scale: 1.02;
-        transform: translateY(3%);
-        animation: img-floating 1.6s ease-in-out infinite alternate;
-    }
-    div {
-        position: absolute;
-        bottom: calc((100svh - 100vw * 1.375) / 2 * 1.1);
-        transform: translate(0, 50%);
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        button.play {
-            margin-bottom: 1rem;
-            span {
-                @include fraunces(24, 600);
-            }
+
+        img {
+            animation: img-floating 1.6s ease-in-out infinite alternate;
+            max-width: 400px;
+            width: 100%;
         }
     }
-}
 
-@media (min-width: $max-width-desktop) {
-    #main_HomePage div {
-        bottom: calc((100svh - $max-width-desktop * 1.375) / 2 * 1.1);
+    div {
+        bottom: 3rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        height: fit-content;
+        position: absolute;
+        width: 100%;
+
+        button.play {
+            span {
+                @include fraunces(24, 600);
+                text-transform: lowercase;
+            }
+        }
     }
 }
 
@@ -68,5 +88,4 @@
         transform: translateY(6%);
     }
 }
-
 </style>

@@ -1,17 +1,31 @@
 <template>
-<!--  <LoadingPage/>-->
-<!--  <HomePage/>-->
-  <SeerPage/>
-<!-- <PaintingPage/>-->
+    <div>
+        <HomePage v-if="currentPage === pages.HOME_PAGE" @update-page="newPage => updatePage(newPage)" />
+
+        <div>
+            <HomePage v-if="currentPage === pages.HOME_PAGE" />
+
+            <CodePage v-else-if="currentPage === pages.CODE_PAGE" />
+
+            <PaintingPage v-else-if="currentPage === pages.PAINTING_PAGE" />
+
+            <SeerPage v-else-if="currentPage === pages.SEER_PAGE" />
+
+            <CreditsPage v-else-if="currentPage === pages.CREDITS_PAGE" />
+        </div>
+    </div>
 </template>
 
 <script setup>
-  // import LoadingPage from '@/components/LoadingPage.vue';
-  // import HomePage from '@/components/Homepage.vue';
-  // import PaintingPage from "@/components/PaintingPage.vue";
-  import SeerPage from '@/components/SeerPage/SeerPage.vue';
-</script>
+import { computed } from 'vue'
+import { useStore } from '@/assets/js/store.js'
+import { pages } from '/src/assets/js/Enums.js'
 
-<style lang="scss">
-@import './assets/scss/settings.scss';
-</style>
+import HomePage from '@/components/HomePage/Homepage.vue'
+import CodePage from '@/components/CodePage/CodePage.vue'
+import PaintingPage from '@/components/PaintingPage/PaintingPage.vue'
+import SeerPage from '@/components/SeerPage/SeerPage.vue'
+import CreditsPage from '@/components/Credits/CreditsPage.vue'
+
+const currentPage = computed(() => useStore().page)
+</script>

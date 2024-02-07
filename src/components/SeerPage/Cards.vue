@@ -1,35 +1,50 @@
 <template>
-  <div ref="cardsContainer" id="cards" class="active-card-chalice">
-    <img v-for="card in cards" :key="card.id" :id="card.id" :src="card.src" :alt="card.alt" class="card" @click="handleCardClick(card)">
+  <div ref="cardsContainer" id="cards">
+    <img v-for="card in cards" @click="handleCardClick(card)" :key="card.id" :id="card.id" :src="card.src" :alt="card.alt" class="card">
   </div>
+
+  <WindowChoice
+      :disabled-window-choice="disabledWindowChoice"
+      :remove-active-card-classes="removeActiveCardClasses"
+      ref="windowChoiceRef"
+  />
+
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import { cards } from '/src/assets/js/Enums.js';
+import WindowChoice from "@/components/SeerPage/WindowChoice.vue";
 
+const windowChoiceRef = ref(null);
 const cardsContainer = ref(null);
 
-const cards = [
-  { id: 'card-rose', src: '/images/cards/card-rose.webp', alt: 'Carte de tarot avec le signe d\'une rose' },
-  { id: 'card-chalice', src: '/images/cards/card-rose.webp', alt: 'Carte de tarot avec le signe d\'un calice' },
-  { id: 'card-sword', src: '/images/cards/card-rose.webp', alt: 'Carte de tarot avec le signe d\'une épée' }
-];
+function removeActiveCardClasses() {
+  const cardsContainerClasses = cardsContainer.value.classList;
+  while (cardsContainerClasses.length > 0) {
+    cardsContainerClasses.remove(cardsContainerClasses.item(0));
+  }
+}
 
 const handleCardClick = (card) => {
-  removeClasses(cardsContainer.value);
+  removeActiveCardClasses();
   cardsContainer.value.classList.add("active-" + card.id);
+  windowChoiceRef.value.$el.style.display = 'flex';
 };
 
-function removeClasses(element) {
-  const elementClasses = element.classList;
-  while (elementClasses.length > 0) {
-    elementClasses.remove(elementClasses.item(0));
-  }
+const disabledWindowChoice = () => {
+  windowChoiceRef.value.$el.style.display = 'none';
 }
 </script>
 
 <style lang="scss">
 @import '../../assets/scss/settings';
+@mixin transform-card-rose {
+  transform: rotateZ(-15deg) translate(2rem, 1rem);
+}
+@mixin transform-card-sword {
+  transform: rotateZ(15deg) translate(-2rem, 1rem);
+}
 %active-card-left {
   transform: rotateZ(-10deg) translate(.2rem, 1rem);
 }
@@ -51,7 +66,6 @@ function removeClasses(element) {
   display: flex;
   justify-content: center;
   animation: cards_start .8s ease-in-out;
-
   .card {
     transition-duration: .4s;
     cursor: pointer;
@@ -59,7 +73,7 @@ function removeClasses(element) {
   }
 
   #card-rose {
-    transform: rotateZ(-20deg) translate(.8rem, 1rem);
+    @include transform-card-rose;
     animation: card_rose 1s ease-in-out;
   }
   #card-chalice {
@@ -67,19 +81,9 @@ function removeClasses(element) {
   }
   #card-sword {
     z-index: 1;
-    transform: rotateZ(20deg) translate(-.8rem, 1rem);
+    @include transform-card-sword;
     animation: card_sword 1s ease-in-out;
   }
-
-  //#card-rose:hover {
-  //  transform: rotateZ(-20deg) translate(.8rem, -.5rem);
-  //}
-  //#card-chalice:hover {
-  //  transform: translateY(-1.5rem);
-  //}
-  //#card-sword:hover {
-  //  transform: rotateZ(20deg) translate(-.8rem, -.5rem);
-  //}
 }
 
 #cards.active-card-rose {
@@ -133,7 +137,7 @@ function removeClasses(element) {
     transform: rotateZ(0) translate(80%);
   }
   100% {
-    transform: rotateZ(-20deg) translate(.8rem, 1rem);
+    @include transform-card-rose;
   }
 }
 @keyframes card_sword {
@@ -144,7 +148,7 @@ function removeClasses(element) {
     transform: rotateZ(0) translate(-80%);
   }
   100% {
-    transform: rotateZ(20deg) translate(-.8rem, 1rem);
+    @include transform-card-sword;
   }
 }
 </style>

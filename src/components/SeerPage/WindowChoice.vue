@@ -7,7 +7,7 @@
       <span>Jouer la carte</span>
     </button>
 
-    <button class="button-link cancel">
+    <button @click="disabledMe" class="button-link cancel">
       <span>Annuler</span>
     </button>
 
@@ -15,6 +15,12 @@
 </template>
 
 <script setup>
+import { defineProps } from 'vue';
+const { disabledWindowChoice, removeActiveCardClasses } = defineProps(['disabledWindowChoice', 'removeActiveCardClasses']);
+const disabledMe = () => {
+  disabledWindowChoice();
+  removeActiveCardClasses();
+};
 </script>
 
 <style lang="scss">
@@ -23,7 +29,7 @@
   z-index: 2;
   position: relative;
   width: 100%;
-  display: flex;
+  display: none; // flex quand il est actif
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;

@@ -2,112 +2,87 @@
 @import 'settings';
 
 html {
-  background: $black-background;
-  display: flex;
-  justify-content: center;
+    background: $black-background;
+    display: flex;
+    justify-content: center;
 }
 
-html, html *, * * {
-  @include fraunces();
+html,
+html *,
+* * {
+    @include fraunces();
+}
+
+body {
+    background-image: url('/public/images/backgrounds/neutral-bg.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
 }
 
 main {
-  position: relative;
-  height: 100svh;
-  width: 100vw;
-  max-width: $max-width-desktop;
-  overflow: hidden;
+    position: relative;
+    height: 100svh;
+    width: 100%;
+    overflow: hidden;
 }
 
 img {
-  user-select: none;
-  -webkit-user-drag: none;
-  -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
 }
 
-// ------ Button ------
-button {
-  background: none;
-  border: none;
-}
-.button-link {
-  span {
-    position: relative;
-  }
-  span::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-bottom: .5px solid;
-  }
-  span:hover::after {
-    animation: button-line-start .6s ease-in-out forwards;
-  }
-  span.active::after {
-    animation: button-line-end .6s ease-in-out forwards;
-  }
-}
-@keyframes button-line-start {
-  0% {
-    transform: scaleX(1);
-    transform-origin: right;
-  }
-  49.99% {
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-bottom: .5px solid;
-    transform: scaleX(0);
-    transform-origin: right;
-  }
-  50% {
-    left: -5%;
-    width: 110%;
-    height: 60%;
-    border-bottom: 2px solid;
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-  100% {
-    left: -5%;
-    width: 110%;
-    height: 60%;
-    border-bottom: 2px solid;
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-}
-@keyframes button-line-end {
-  0% {
-    left: -5%;
-    width: 110%;
-    height: 60%;
-    border-bottom: 2px solid;
-    transform: scaleX(1);
-    transform-origin: right;
-  }
-  49.99% {
-    left: -5%;
-    width: 110%;
-    height: 60%;
-    border-bottom: 2px solid;
-    transform: scaleX(0);
-    transform-origin: right;
-  }
-  50% {
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-bottom: .5px solid;
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-  100% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-}
+html {
+    // BUTTONS
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .button-primary{
+        margin: auto auto;
+        padding: 0.75rem 1rem;
+        border-radius: .5rem;
+        color: $black-background;
+        background-color: $yellow-text;
+    }
+    .button-link {
+        span {
+            position: relative;
+        }
+        span::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-bottom: 1px solid;
+        }
+        span:hover::after {
+            animation: button-line-start 0.4s ease-in-out;
+        }
+    }
+    @keyframes button-line-start {
+        0% {
+            transform: scaleX(1);
+            transform-origin: right;
+        }
+        49.99% {
+            transform: scaleX(0);
+            transform-origin: right;
+        }
+        50% {
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        100% {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    }
+} // BUTTONS
