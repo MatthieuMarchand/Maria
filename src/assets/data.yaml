@@ -28,7 +28,7 @@ screens:
     - id: trame-1
       type: story
       img: /jeunes-filles-0.jpg
-      story: >
+      story:
           Vos pas vous mènent vers une prairie où se trouvent quelques vaches qui se prélassent en attendant la fin de la journée. Devant vous serpente un sentier qu’une mère suit, une jarre sur la tête et un panier de fruits accroché à son bras. Des enfants rient sur le bord du chemin et respirent la bonne humeur. Alors que vous observez cette scène, un sentiment de rage qui ne vous appartient pas semble entacher cette peinture.
           Avec une pointe d’agacement, Maria vous demande de faire un choix.
           — Empressez-vous de choisir, ce tableau fait partie de ceux que j’abhorre le plus.
