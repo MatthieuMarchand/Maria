@@ -20,6 +20,8 @@
     justify-content: center;
     opacity: 1;
     overflow: hidden;
+    position: fixed;
+    top: 0;
 
     h1 {
         position: relative;

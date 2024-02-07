@@ -1,9 +1,11 @@
 <template>
-    <!--  <LoadingPage/>-->
+    <LoadingPage />
     <main id="main_HomePage">
-        <img src="/images/tree-with-door.svg" alt="Arbre avec une porte à l'intérieur" />
+        <div class="homepage-tree-container">
+            <img src="/images/tree.svg" alt="Arbre avec une porte à l'intérieur" />
+        </div>
         <div>
-            <button @click="changePage(pages.SEER_PAGE)" class="button-link play">
+            <button @click="updateCurrentPage(pages.SEER_PAGE)" class="button-link play">
                 <span>Ouvrir la porte</span>
             </button>
             <button class="button-link">
@@ -16,11 +18,12 @@
 <script setup>
 import { pages } from '/src/assets/js/Enums.js'
 import LoadingPage from '@/components/HomePage/LoadingPage.vue'
+import { useStore } from '/src/assets/js/store.js'
 
-const emit = defineEmits(['changePage'])
+const store = useStore()
 
-const changePage = newPage => {
-    emit('changePage', newPage)
+const updateCurrentPage = newPage => {
+    store.updateCurrentPage(newPage)
 }
 </script>
 
