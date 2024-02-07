@@ -26,16 +26,17 @@
 <style lang="scss">
 @import '../../assets/scss/settings';
 
-#main_CodePage {
+#main_CodePage { //Change background
+  background-image: url('/images/pictures/background/backGroundMap.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
 
   .container {
     max-width:30rem;
-    background-image: url('/images/pictures/background/backgroundMap.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+
 
     .text{
       margin: 2rem 2rem 2rem 2rem;
