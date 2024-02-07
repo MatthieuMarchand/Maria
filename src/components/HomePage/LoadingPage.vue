@@ -35,7 +35,7 @@
     height: 62%;
     left: 0;
     position: absolute;
-    top: 0;
+    bottom: 0;
     transform: scaleX(0);
     transform-origin: center left;
     width: 100%;
