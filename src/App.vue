@@ -15,28 +15,28 @@
 <!--    <SeerPage/>-->
 <!--  </div>-->
 
-<!--  <div>-->
-<!--    <HomePage-->
-<!--        v-if="currentPage === HOME_PAGE"-->
-<!--        @update-page="newPage => updatePage(newPage)"-->
-<!--    />-->
+  <div>
+    <HomePage
+        v-if="currentPage === HOME_PAGE"
+        @update-page="newPage => updatePage(newPage)"
+    />
 
-<!--    <CodePage-->
-<!--        v-else-if="currentPage === CODE_PAGE"-->
-<!--    />-->
+    <CodePage
+        v-else-if="currentPage === CODE_PAGE"
+    />
 
-<!--    <PaintingPage-->
-<!--    v-else-if="currentPage === PAINTING_PAGE"-->
-<!--    />-->
+    <PaintingPage
+    v-else-if="currentPage === PAINTING_PAGE"
+    />
 
-<!--    <SeerPage-->
-<!--    v-else-if="currentPage === SEER_PAGE"-->
-<!--    />-->
-<!--    <CreditsPage-->
-<!--        v-else-if="currentPage === CREDITS_PAGE"-->
-<!--    />-->
-<!--  </div>-->
-  <CreditsPage/>
+    <SeerPage
+    v-else-if="currentPage === SEER_PAGE"
+    />
+    <CreditsPage
+        v-else-if="currentPage === CREDITS_PAGE"
+    />
+  </div>
+<!--  <CreditsPage/>-->
 
 </template>
 
