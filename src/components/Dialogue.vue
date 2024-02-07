@@ -1,10 +1,10 @@
 <template>
-  <p class="dialogue">
-    {{ currentDialogue }}
+  <div class="dialogue">
+    <p v-html="currentDialogue"></p>
     <button @click="nextDialogue" id="button-next" class="button-link">
       <span>Suivant</span>
     </button>
-  </p>
+  </div>
 </template>
 
 <script setup>
@@ -42,8 +42,10 @@ onMounted(() => {
   padding: 1rem;
   box-sizing: border-box;
   background: $yellow-text;
-  color: $black-background;
   border-radius: 1rem;
+  p, p * {
+    color: $black-background;
+  }
   #button-next.button-link {
     position: absolute;
     bottom: 0;

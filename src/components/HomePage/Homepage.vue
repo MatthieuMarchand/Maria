@@ -3,7 +3,7 @@
   <main id="main_HomePage">
       <img src="/images/tree-with-door.svg" alt="Arbre avec une porte à l'intérieur">
       <div>
-          <button class="button-link play">
+          <button @click="updatePage('CodePage')" class="button-link play">
               <span>lancer le jeu</span>
           </button>
           <button class="button-link">
@@ -15,6 +15,13 @@
 
 <script setup>
   import LoadingPage from "@/components/HomePage/LoadingPage.vue";
+
+  const emit = defineEmits(['updatePage'])
+
+  const updatePage = (newPage) => {
+    emit('updatePage', newPage)
+  }
+
 </script>
 
 <style lang="scss">
