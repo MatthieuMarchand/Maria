@@ -31,9 +31,17 @@ html {
     button {
         background: none;
         border: none;
+        cursor: pointer;
+    }
+
+    .button-primary{
+        margin: auto auto;
+        padding: 0.75rem 1rem;
+        border-radius: .5rem;
+        color: $black-background;
+        background-color: $yellow-text;
     }
     .button-link {
-        cursor: pointer;
         span {
             position: relative;
         }

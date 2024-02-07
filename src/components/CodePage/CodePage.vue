@@ -8,7 +8,7 @@
       <div id="inputContainer">
         <label for="code-picture">Entrer le code :</label>
         <input name="code-picture" placeholder="Exemple : &nbsp; A1E2T">
-        <button class="validate-code">Valider</button>
+        <button class="button-primary">Valider</button>
       </div>
     </div>
 
@@ -90,14 +90,6 @@
       text-transform: none;
       color: $placeholder-color;
     }
-  }
-
-  .validate-code {
-    margin: auto auto;
-    padding: 1rem 2rem 1rem 2rem;
-    border-radius: .5rem;
-    color: $black-background;
-    background-color: $yellow-text;
   }
 }
 
