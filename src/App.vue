@@ -1,50 +1,31 @@
 <template>
+    <div>
+        <HomePage v-if="currentPage === pages.HOME_PAGE" @update-page="newPage => updatePage(newPage)" />
 
-  <div>
-    <HomePage
-        v-if="currentPage === pages.HOME_PAGE"
-        @change-page="newPage => changePage(newPage)"
-    />
+        <CodePage v-else-if="currentPage === pages.CODE_PAGE" />
 
-  <div>
-    <HomePage
-        v-if="currentPage === HOME_PAGE"
-        @update-page="newPage => updatePage(newPage)"
-    />
+        <PaintingPage v-else-if="currentPage === pages.PAINTING_PAGE" />
 
-    <CodePage
-        v-else-if="currentPage === CODE_PAGE"
-    />
-
-    <PaintingPage
-    v-else-if="currentPage === PAINTING_PAGE"
-    />
-
-    <SeerPage
-    v-else-if="currentPage === SEER_PAGE"
-    />
-    <CreditsPage
-        v-else-if="currentPage === CREDITS_PAGE"
-    />
-  </div>
-
+        <SeerPage v-else-if="currentPage === pages.SEER_PAGE" />
+        <CreditsPage v-else-if="currentPage === CREDITS_PAGE" />
+    </div>
 </template>
 
 <script setup>
-  import { pages } from '/src/assets/js/Enums.js';
-  import HomePage from '@/components/HomePage/Homepage.vue';
-  import CodePage from "@/components/CodePage/CodePage.vue";
-  import PaintingPage from "@/components/PaintingPage/PaintingPage.vue";
-  import SeerPage from "@/components/SeerPage/SeerPage.vue";
-  import CreditsPage from "@/components/Credits/CreditsPage.vue";
+import { pages } from '/src/assets/js/Enums.js'
+import HomePage from '@/components/HomePage/Homepage.vue'
+import CodePage from '@/components/CodePage/CodePage.vue'
+import PaintingPage from '@/components/PaintingPage/PaintingPage.vue'
+import SeerPage from '@/components/SeerPage/SeerPage.vue'
+import CreditsPage from '@/components/Credits/CreditsPage.vue'
 
-  import { ref } from 'vue';
+import { ref } from 'vue'
 
-  let currentPage = ref(pages.HOME_PAGE);
+let currentPage = ref(pages.HOME_PAGE)
 
-  const changePage = (newPage) => {
-    currentPage.value = newPage;
-  }
+const changePage = newPage => {
+    currentPage.value = newPage
+}
 </script>
 
 <style lang="scss">

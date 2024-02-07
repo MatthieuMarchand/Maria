@@ -1,28 +1,27 @@
 <template>
-  <LoadingPage/>
-  <main id="main_HomePage">
-      <img src="/images/tree-with-door.svg" alt="Arbre avec une porte à l'intérieur">
-      <div>
-          <button @click="changePage(pages.SEER_PAGE)" class="button-link play">
-              <span>Ouvrir la porte</span>
-          </button>
-          <button class="button-link">
-              <span>crédits</span>
-          </button>
-      </div>
-  </main>
+    <!--  <LoadingPage/>-->
+    <main id="main_HomePage">
+        <img src="/images/tree-with-door.svg" alt="Arbre avec une porte à l'intérieur" />
+        <div>
+            <button @click="changePage(pages.SEER_PAGE)" class="button-link play">
+                <span>Ouvrir la porte</span>
+            </button>
+            <button class="button-link">
+                <span>crédits</span>
+            </button>
+        </div>
+    </main>
 </template>
 
 <script setup>
-  import { pages } from '/src/assets/js/Enums.js';
-  import LoadingPage from '@/components/HomePage/LoadingPage.vue'
+import { pages } from '/src/assets/js/Enums.js'
+import LoadingPage from '@/components/HomePage/LoadingPage.vue'
 
-  const emit = defineEmits(['changePage'])
+const emit = defineEmits(['changePage'])
 
-  const changePage = (newPage) => {
+const changePage = newPage => {
     emit('changePage', newPage)
-  }
-
+}
 </script>
 
 <style lang="scss">
