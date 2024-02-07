@@ -15,24 +15,28 @@
 <!--    <SeerPage/>-->
 <!--  </div>-->
 
-  <div>
-    <HomePage
-        v-if="currentPage === HOME_PAGE"
-        @update-page="newPage => updatePage(newPage)"
-    />
+<!--  <div>-->
+<!--    <HomePage-->
+<!--        v-if="currentPage === HOME_PAGE"-->
+<!--        @update-page="newPage => updatePage(newPage)"-->
+<!--    />-->
 
-    <CodePage
-        v-else-if="currentPage === CODE_PAGE"
-    />
+<!--    <CodePage-->
+<!--        v-else-if="currentPage === CODE_PAGE"-->
+<!--    />-->
 
-    <PaintingPage
-    v-else-if="currentPage === PAINTING_PAGE"
-    />
+<!--    <PaintingPage-->
+<!--    v-else-if="currentPage === PAINTING_PAGE"-->
+<!--    />-->
 
-    <SeerPage
-    v-else-if="currentPage === SEER_PAGE"
-    />
-  </div>
+<!--    <SeerPage-->
+<!--    v-else-if="currentPage === SEER_PAGE"-->
+<!--    />-->
+<!--    <CreditsPage-->
+<!--        v-else-if="currentPage === CREDITS_PAGE"-->
+<!--    />-->
+<!--  </div>-->
+  <CreditsPage/>
 
 </template>
 
@@ -41,12 +45,16 @@
   import CodePage from "@/components/CodePage/CodePage.vue";
   import PaintingPage from "@/components/PaintingPage/PaintingPage.vue";
   import SeerPage from "@/components/SeerPage/SeerPage.vue";
+  import CreditsPage from "@/components/Credits/CreditsPage.vue";
+
   import { ref } from 'vue';
 
   const HOME_PAGE = "HomePage";
   const CODE_PAGE = "CodePage";
   const PAINTING_PAGE = "PaintingPage";
   const SEER_PAGE = "SeerPage";
+  const CREDITS_PAGE = "CreditsPage";
+
 
   let currentPage = ref(HOME_PAGE);
 
