@@ -1,6 +1,6 @@
 <template>
   <main id="main_CreditsPage">
-    <button class="back-icon" onclick=""><img src="/images/icons/chevron-left.svg" alt="back icon"></button>
+    <button @click="updateCurrentPage(pages.HOME_PAGE)" class="back-icon"><img src="/images/icons/chevron-left.svg" alt="back icon"></button>
     <div class="container">
 
       <div class="credits-container">
@@ -39,7 +39,14 @@
 </template>
 
 <script setup>
+import { pages } from '@/assets/js/Enums.js'
+import { useStore } from '/src/assets/js/store.js'
 
+const store = useStore()
+
+const updateCurrentPage = newPage => {
+  store.updateCurrentPage(newPage)
+}
 </script>
 
 <style lang="scss">

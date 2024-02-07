@@ -8,7 +8,7 @@
             <button @click="updateCurrentPage(pages.SEER_PAGE)" class="button-link play">
                 <span>Ouvrir la porte</span>
             </button>
-            <button class="button-link">
+            <button @click="updateCurrentPage(pages.CREDITS_PAGE)" class="button-link">
                 <span>crédits</span>
             </button>
         </div>
