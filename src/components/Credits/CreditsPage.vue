@@ -53,7 +53,7 @@
     .back-icon{
       position: absolute;
       z-index: 15;
-      top: 2.5rem;
+      top: 2.75rem;
       left: 1rem;
       width: 44px;
       height: 44px;
