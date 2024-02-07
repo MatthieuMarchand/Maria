@@ -2,7 +2,15 @@
     <div>
         <HomePage v-if="currentPage === pages.HOME_PAGE" @update-page="newPage => updatePage(newPage)" />
 
+<<<<<<< HEAD
         <CodePage v-else-if="currentPage === pages.CODE_PAGE" />
+=======
+  <div>
+    <HomePage
+        v-if="currentPage === pages.HOME_PAGE"
+        @change-page="newPage => changePage(newPage)"
+    />
+>>>>>>> 6fd41aa (fix)
 
         <PaintingPage v-else-if="currentPage === pages.PAINTING_PAGE" />
 
