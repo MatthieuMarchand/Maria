@@ -2,7 +2,8 @@ export const pages = {
     HOME_PAGE: 'HomePage',
     CODE_PAGE: 'CodePage',
     PAINTING_PAGE: 'PaintingPage',
-    SEER_PAGE: 'SeerPage'
+    SEER_PAGE: 'SeerPage',
+    CREDITS_PAGE: 'CreditsPage'
 }
 export const codes = {
     PAINTING_1: '1912',
