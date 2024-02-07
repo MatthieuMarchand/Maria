@@ -1,9 +1,6 @@
 <template>
     <main id="main_SeerPage">
-        <Dialogue
-            :v-if="dialoguesLoaded"
-            :dialogues="dialogues"
-        />
+        <Dialogue :v-if="dialoguesLoaded" :dialogues="dialogues" />
         <img id="seer" src="/images/seer.svg" alt="La voyante" />
 
         <div id="table"></div>
@@ -18,31 +15,35 @@ import Dialogue from '@/components/SeerPage/Dialogue.vue'
 import { fetchData } from '@/assets/js/config.js'
 import { ref } from 'vue'
 
-let dialogues = [];
-let dialoguesLoaded = ref(false);
+let dialogues = []
+let dialoguesLoaded = ref(false)
 
 const getDialogues = async () => {
-    await fetchData().then(data => {
-
-        data.screens[0].dialogs.forEach(dialog => {
-            dialogues.push(dialog)
+    await fetchData()
+        .then(data => {
+            data.screens[0].dialogs.forEach(dialog => {
+                dialogues.push(dialog)
+            })
         })
-
-    }).then(() => {
-        dialoguesLoaded = ref(true);
-    }).catch(error => {
-        console.error('Erreur lors de la récupération des données:', error);
-        dialogues = ["Erreur 404 :("];
-    });
-};
-getDialogues();
-
+        .then(() => {
+            dialoguesLoaded = ref(true)
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération des données:', error)
+            dialogues = ['Erreur 404 :(']
+        })
+}
+getDialogues()
 </script>
 
 <style lang="scss">
 @import '../../assets/scss/settings';
 
 #main_SeerPage {
+    background-image: url('/images/backgrounds/seer-mouth-open.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
     perspective: 4rem;
 
     #table {
