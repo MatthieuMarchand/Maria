@@ -52,8 +52,9 @@ const disabledWindowChoice = () => {
   z-index: 3;
   position: absolute;
   bottom: 0;
-  width: 10rem;
+  width: 50%;
   transform: translateY(calc(-100svh + -1.5rem + 100% + 1.5rem)); // modifier le dernier nombre pour rajouter de la margin-top
+  max-width: 240px;
 }
 %active-card-right {
   transform: rotateZ(10deg) translate(-.2rem, 1rem);

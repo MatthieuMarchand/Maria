@@ -40,6 +40,13 @@ const disabledMe = () => {
   }
   .play-card {
     margin-bottom: 1.5rem;
+
+    span{
+      @include fraunces();
+      font-size: 20px;
+      font-weight: 700;
+
+    }
   }
   .cancel {
     margin-bottom: 2rem;
