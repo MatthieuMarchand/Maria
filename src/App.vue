@@ -1,19 +1,10 @@
 <template>
 
-<!--  <div v-if="currentPage === HOME_PAGE">-->
-<!--    <HomePage-->
-<!--      @update-page="newPage => updatePage(newPage)"-->
-<!--    />-->
-<!--  </div>-->
-<!--  <div v-else-if="currentPage === CODE_PAGE">-->
-<!--    <CodePage/>-->
-<!--  </div>-->
-<!--  <div v-else-if="currentPage === PAINTING_PAGE">-->
-<!--    <PaintingPage/>-->
-<!--  </div>-->
-<!--  <div v-else-if="currentPage === SEER_PAGE">-->
-<!--    <SeerPage/>-->
-<!--  </div>-->
+  <div>
+    <HomePage
+        v-if="currentPage === pages.HOME_PAGE"
+        @update-page="newPage => updatePage(newPage)"
+    />
 
   <div>
     <HomePage
@@ -36,11 +27,11 @@
         v-else-if="currentPage === CREDITS_PAGE"
     />
   </div>
-<!--  <CreditsPage/>-->
 
 </template>
 
 <script setup>
+  import { pages } from '/src/assets/js/Enums.js';
   import HomePage from '@/components/HomePage/Homepage.vue';
   import CodePage from "@/components/CodePage/CodePage.vue";
   import PaintingPage from "@/components/PaintingPage/PaintingPage.vue";
@@ -49,14 +40,7 @@
 
   import { ref } from 'vue';
 
-  const HOME_PAGE = "HomePage";
-  const CODE_PAGE = "CodePage";
-  const PAINTING_PAGE = "PaintingPage";
-  const SEER_PAGE = "SeerPage";
-  const CREDITS_PAGE = "CreditsPage";
-
-
-  let currentPage = ref(HOME_PAGE);
+  let currentPage = ref(pages.HOME_PAGE);
 
   const updatePage = (newPage) => {
     currentPage.value = newPage;

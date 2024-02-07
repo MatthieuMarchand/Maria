@@ -5,7 +5,7 @@
             <img src="/images/tree.svg" alt="Arbre avec une porte à l'intérieur" />
         </div>
         <div>
-            <button @click="updatePage('CodePage')" class="button-link play">
+            <button @click="updatePage(pages.SEER_PAGE)" class="button-link play">
                 <span>Ouvrir la porte</span>
             </button>
             <button class="button-link">
@@ -16,6 +16,7 @@
 </template>
 
 <script setup>
+  import { pages } from '/src/assets/js/Enums.js';
 import LoadingPage from '@/components/HomePage/LoadingPage.vue'
 
 const emit = defineEmits(['updatePage'])

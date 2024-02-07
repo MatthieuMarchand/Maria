@@ -7,14 +7,14 @@
 
     <Cards/>
 
-    <WindowChoice/>
+<!--    <WindowChoice/>-->
 
   </main>
 </template>
 
 <script setup>
   import Cards from './Cards.vue';
-  import WindowChoice from './WindowChoice.vue';
+  // import WindowChoice from './WindowChoice.vue';
 </script>
 
 <style lang="scss">
