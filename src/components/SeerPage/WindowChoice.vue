@@ -24,25 +24,33 @@ const disabledMe = () => {
 <style lang="scss">
 @import '../../assets/scss/settings';
 #main_WindowChoice {
-    background-image: url('/images/backgrounds/seer-mouth-open.png');
+    align-items: center;
+    background: rgba($black-background, 0.9);
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 2;
-    position: relative;
-    width: 100%;
     display: none; // flex quand il est actif
     flex-direction: column;
-    align-items: center;
     justify-content: flex-end;
-    background: rgba($black-background, 0.9);
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 
     p {
         margin: 0 3rem 6rem 3rem;
     }
+
     .play-card {
         margin-bottom: 1.5rem;
+
+        span {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
     }
+
     .cancel {
         margin-bottom: 2rem;
     }

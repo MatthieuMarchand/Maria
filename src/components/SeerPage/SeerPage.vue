@@ -1,10 +1,6 @@
 <template>
     <main id="main_SeerPage">
         <Dialogue :v-if="dialoguesLoaded" :dialogues="dialogues" />
-        <img id="seer" src="/images/seer.svg" alt="La voyante" />
-
-        <div id="table"></div>
-
         <Cards />
     </main>
 </template>
@@ -44,7 +40,9 @@ getDialogues()
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
+    box-sizing: border-box;
     perspective: 4rem;
+    padding: 0 2rem;
 
     #table {
         position: absolute;
