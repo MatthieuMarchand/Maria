@@ -4,7 +4,6 @@
             <div class="image-container">
                 <img :src="'/images/pictures/pictures' + useStore().dataOfScreen.img" alt="Les deux fillettes" />
             </div>
-
             <div class="story">
                 <p>{{ useStore().dataOfScreen.story }}</p>
 

@@ -3,7 +3,8 @@ export const pages = {
     CODE_PAGE: 'CodePage',
     PAINTING_PAGE: 'PaintingPage',
     SEER_PAGE: 'SeerPage',
-    CREDITS_PAGE: 'CreditsPage'
+    CREDITS_PAGE: 'CreditsPage',
+    ENDING_PAGE: 'EndingPage'
 }
 export const codes = {
     PAINTING_1: '1912',
