@@ -14,7 +14,7 @@ html *,
 }
 
 body {
-    background-image: url('/public/images/backgrounds/neutral-bg.png');
+    background-image: url('/public/images/backgrounds/mobile/neutral-bg.png');
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -42,10 +42,10 @@ html {
         cursor: pointer;
     }
 
-    .button-primary{
+    .button-primary {
         margin: auto auto;
-        padding: 0.75rem 1rem;
-        border-radius: .5rem;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
         color: $black-background;
         background-color: $yellow-text;
     }
