@@ -58,7 +58,7 @@ const disabledWindowChoice = () => {
     display: flex;
     position: absolute;
     left: 0;
-    bottom: -1.5rem;
+    bottom: -3.5rem;
     width: 100%;
     justify-content: center;
 
