@@ -58,9 +58,12 @@ const updateCurrentPage = newPage => {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
-        height: fit-content;
         position: absolute;
         width: 100%;
+
+        .button-link {
+            height: fit-content;
+        }
 
         button.play {
             span {
