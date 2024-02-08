@@ -13,24 +13,32 @@ import { ref, defineProps, watch, onMounted } from 'vue'
 
 const props = defineProps(['dialogues'])
 const count = ref(0)
-const currentDialogue = ref(props.dialogues[count.value])
+const currentDialogue = ref()
+
+let cards = null
+let buttonNext = null
 
 function nextDialogue() {
     if (count.value < props.dialogues.length - 1) {
         count.value++
     } else {
-        console.log('Plus de dialogue')
+        buttonNext.style.display = "none"
     }
 }
 
 onMounted(() => {
-    setTimeout(() => {
-        currentDialogue.value = props.dialogues[count.value].text
-    }, 500)
+    currentDialogue.value = props.dialogues[count.value].text
+    cards = document.getElementById("cards")
+    cards.style.display = "none"
+    buttonNext = document.getElementById("button-next")
 })
 
 watch(count, () => {
     currentDialogue.value = props.dialogues[count.value].text
+    if (props.dialogues[count.value].with_cards) {
+        cards.style.display = "flex"
+        cards.classList.add("cards-active")
+    }
 })
 </script>
 

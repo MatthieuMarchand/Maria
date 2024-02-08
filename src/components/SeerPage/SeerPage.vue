@@ -1,6 +1,8 @@
 <template>
     <main id="main_SeerPage">
-        <Dialogue :v-if="dialoguesLoaded" :dialogues="dialogues" />
+        <Dialogue
+            :dialogues="dialogues"
+        />
         <Cards />
     </main>
 </template>
@@ -8,28 +10,12 @@
 <script setup>
 import Cards from '@/components/SeerPage/Cards.vue'
 import Dialogue from '@/components/SeerPage/Dialogue.vue'
-import { fetchData } from '@/assets/js/config.js'
-import { ref } from 'vue'
+import { useStore } from "@/assets/js/store.js";
 
 let dialogues = []
-let dialoguesLoaded = ref(false)
-
-const getDialogues = async () => {
-    await fetchData()
-        .then(data => {
-            data.screens[0].dialogs.forEach(dialog => {
-                dialogues.push(dialog)
-            })
-        })
-        .then(() => {
-            dialoguesLoaded = ref(true)
-        })
-        .catch(error => {
-            console.error('Erreur lors de la récupération des données:', error)
-            dialogues = ['Erreur 404 :(']
-        })
-}
-getDialogues()
+useStore().data.screens[0].dialogs.forEach(dialog => {
+  dialogues.push(dialog)
+})
 </script>
 
 <style lang="scss">
