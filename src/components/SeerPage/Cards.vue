@@ -55,13 +55,12 @@ const disabledWindowChoice = () => {
 }
 
 #cards {
-    display: none;
+    display: flex;
     position: absolute;
     left: 0;
     bottom: -1.5rem;
     width: 100%;
     justify-content: center;
-    transform: translateY(80%);
 
     .card {
         transition-duration: 0.4s;
@@ -82,7 +81,6 @@ const disabledWindowChoice = () => {
 }
 
 #cards.cards-active {
-    display: flex;
     animation: cards_start 0.8s ease-in-out forwards;
     #card-rose {
         animation: card_rose 1s ease-in-out;

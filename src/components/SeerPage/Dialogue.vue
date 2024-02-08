@@ -29,12 +29,14 @@ function nextDialogue() {
 onMounted(() => {
     currentDialogue.value = props.dialogues[count.value].text
     cards = document.getElementById("cards")
+    cards.style.display = "none"
     buttonNext = document.getElementById("button-next")
 })
 
 watch(count, () => {
     currentDialogue.value = props.dialogues[count.value].text
     if (props.dialogues[count.value].with_cards) {
+        cards.style.display = "flex"
         cards.classList.add("cards-active")
     }
 })
