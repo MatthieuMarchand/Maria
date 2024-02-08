@@ -1,9 +1,21 @@
 <template>
     <div ref="cardsContainer" id="cards">
-        <img v-for="card in cards" @click="handleCardClick(card)" :key="card.id" :id="card.id" :src="card.src" :alt="card.alt" class="card" />
+        <img class="card"
+            @click="handleCardClick(card)"
+            v-for="card in cards"
+            :key="card.id"
+            :id="card.id"
+            :src="card.src"
+            :alt="card.alt"
+        />
     </div>
 
-    <WindowChoice :disabled-window-choice="disabledWindowChoice" :remove-active-card-classes="removeActiveCardClasses" ref="windowChoiceRef" />
+    <WindowChoice
+        :card="cardSelected"
+        :disabled-window-choice="disabledWindowChoice"
+        :remove-active-card-classes="removeActiveCardClasses"
+        ref="windowChoiceRef"
+    />
 </template>
 
 <script setup>
@@ -13,6 +25,7 @@ import WindowChoice from '@/components/SeerPage/WindowChoice.vue'
 
 const windowChoiceRef = ref(null)
 const cardsContainer = ref(null)
+let cardSelected = null;
 
 function removeActiveCardClasses() {
     const cardsContainerClasses = cardsContainer.value.classList
@@ -22,6 +35,7 @@ function removeActiveCardClasses() {
 }
 
 const handleCardClick = card => {
+    cardSelected = card
     removeActiveCardClasses()
     cardsContainer.value.classList.add('active-' + card.id)
     windowChoiceRef.value.$el.style.display = 'flex'

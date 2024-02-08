@@ -36,7 +36,7 @@ screens:
     - id: trame-1
       type: PaintingPage
       label: Passer au choix
-      img: /painting1-flower.png
+      img: /painting1.webp
       story:
           Vos pas vous mènent vers une prairie où se trouvent quelques vaches qui se prélassent en attendant la fin de la journée. Devant vous serpente un sentier qu’une mère suit, une jarre sur la tête et un panier de fruits accroché à son bras. Des enfants rient sur le bord du chemin et respirent la bonne humeur. Alors que vous observez cette scène, un sentiment de rage qui ne vous appartient pas semble entacher cette peinture.
           Avec une pointe d’agacement, Maria vous demande de faire un choix.
@@ -65,7 +65,7 @@ screens:
     - id: story-1
       type: PaintingPage
       label: Continuer
-      img: /jeunes-filles-1.jpg
+      img: /painting1.webp
       story: Vous avez provoqué un phénomène surnaturel en choisissant l’épée. Le ciel s’illumine et tout à coup tout le monde disparaît. Les vaches également. Le sentiment de rage mystérieuse ressenti auparavant est parti aussi étrangement qu’il est venu, et vous vous sentez désormais très léger.
       nextScreen: story-1-code-2
 
@@ -73,14 +73,14 @@ screens:
     - id: story-1-code-2
       type: CodePage
       code: HDEYGR66
-      img: /map-code-2.jpg
+      img: /map-step-1.webp
       nextScreen: story-1-trame-2
 
     # Story 1 - second part - Paysage de montagne
     - id: story-1-trame-2
       type: PaintingPage
       label: Passer au choix
-      img: /paysage-montagne.jpg
+      img: /painting1.webp
       story:
           Vous voilà face à un sentier escarpé. Devant vous se tiennent des hommes armés qui sont en route vers un village. Le ciel est chargé d’une atmosphère magique. Un dragon surgit alors des montagnes et crache du feu sur l’armée. Les hommes crient en s’enfuyant, mais les pertes dans leurs rangs se décuplent.
           — Ah, voilà mon fidèle ami, murmure Maria dans votre oreille. Vous entendez un sourire résigné dans sa voix.
@@ -89,7 +89,7 @@ screens:
     # Second choice of the user
     - id: story-1-choice-2
       type: SeerPage
-      dialog:
+      dialogs:
           - text: Je sens l’odeur du sang et des chaires brûlées, quelle magnifique scène …
             with_cards: true
       cards:
@@ -105,7 +105,7 @@ screens:
     - id: story-1-1
       type: PaintingPage
       label: Continuer
-      img: /paysage-montagne.jpg
+      img: /painting1.webp
       story: Des roses poussent du sol et étouffent les flammes. Les troupes se sentent revigorées et récupèrent leurs armes. L’affrontement éclate, fer contre feu. La bataille est rude, mais l’armée ressort triomphante.
       nextScreen: story-1-1-code-3
 
@@ -113,21 +113,21 @@ screens:
     - id: story-1-1-code-3
       type: CodePage
       code: HDEYGR66
-      img: /map-code-3.jpg
+      img: /map-step-1.webp
       nextScreen: story-1-1-trame-3
 
     # Story 1.1 - third part - St Just
     - id: story-1-1-trame-3
       type: PaintingPage
       label: Passer au choix
-      img: /st-just.jpg
+      img: /painting1.webp
       story: La fin est proche. L’armée que vous suiviez a maintenant atteint sa destination. Le village que vous voyez a été retourné pour trouver celle que l’on appelle l’hérétique. Devant vous se dresse Maria, affaiblie et trainée sur la place centrale.
       nextScreen: story-1-1-choice-3
 
     # Final choice of the user - St Just
     - id: story-1-1-choice-3
       type: SeerPage
-      dialog:
+      dialogs:
           - text: Le temps presse …
             with_cards: true
       cards:
@@ -139,14 +139,14 @@ screens:
     - id: story-1-1-1
       type: PaintingPage
       label: Continuer
-      img: /st-just-cup.jpg
+      img: /painting1.webp
       story: Malgré vos choix, vous n’avez pas pu empêcher la mort de Maria d’arriver … Vous utilisez votre dernière carte et, dans une dernière tentative, une coupe apparaît dans les mains de Maria. Un torrent apparaît, emportant tout sur son passage. En quelques secondes seulement, le village disparaît dans une rivière qui prend son origine d’une simple coupe.
       nextScreen: story-1-1-1-ending
 
     # Ending of the story 1.1.1
     - id: story-1-1-1-ending
       type: EndingPage
-      title: Vous êtes le porteur d’eau
+      title: le porteur d’eau
       text: Vous n’avez malheureusement pas pu sauver Maria de son destin tragique ni n’avez pu venger sa mort. Le village de son enfance a cependant été effacé, ne laissant derrière lui qu’une rivière qui grandira encore et encore. Peut-être qu’à terme, vos actions auront bien plus d’impact qu’ils n’en laissent paraître …
 
     # STORY 1.2
@@ -154,7 +154,7 @@ screens:
     - id: story-1-2
       type: PaintingPage
       label: Continuer
-      img: /paysage-montagne.jpg
+      img: /painting1.webp
       story: Une cascade abondante se met à couler, créant un lac où se baignent des nymphes. Le dragon, davantage attiré par les nymphes se détourne du convoi. L’armée en profite pour s’échapper et se mettre à l’abri. À taille réduite, c’est l’occasion pour elle de se soigner et se reposer. Le crépuscule approche, il leur faudra attendre un nouveau jour afin de continuer leur aventure.
       nextScreen: story-1-1-code-3
 
@@ -162,21 +162,21 @@ screens:
     - id: story-1-2-code-3
       type: CodePage
       code: HDEYGR66
-      img: /map-code-3.jpg
+      img: /map-step-1.webp
       nextScreen: story-1-2-trame-3
 
     # Story 1.2 - third part - St Just
     - id: story-1-2-trame-3
       type: PaintingPage
       label: Passer au choix
-      img: /st-just.jpg
+      img: /painting1.webp
       story: Retardée par l’affrontement contre le Dragon, l’armée n’a pas atteint le village à temps … Maria a réussi à s’échapper, disparaître sans laisser aucune trace.
       nextScreen: story-1-1-choice-3
 
     # Final choice of the user - St Just
     - id: story-1-2-choice-3
       type: SeerPage
-      dialog:
+      dialogs:
           - text: La liberté me tend enfin les bras …
             with_cards: true
       cards:
@@ -188,12 +188,12 @@ screens:
     - id: story-1-2-1
       type: PaintingPage
       label: Continuer
-      img: /st-just-flower.jpg
+      img: /painting1.webp
       story: Maria échappée, cette dernière carte vous permet de couvrir le village de fleurs, symbole d’espoir. Cette action dissuade l’armée de poursuivre Maria, la laissant seule à son destin.
       nextScreen: story-1-2-1-ending
 
     # Ending of the story 1.2.1
     - id: story-1-2-1-ending
       type: EndingPage
-      title: Vous êtes le guide
+      title: le guide
       text: Grâce à votre choix, Maria a réussi à échapper à l'armée et à trouver refuge dans une clairière paisible. Votre influence sur les tableaux a apporté une lueur d'espoir à sa sombre destinée.

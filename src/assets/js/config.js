@@ -6,11 +6,6 @@ export const pages = {
     CREDITS_PAGE: 'CreditsPage',
     ENDING_PAGE: 'EndingPage'
 }
-export const codes = {
-    PAINTING_1: '1912',
-    PAINTING_2: '1013',
-    PAINTING_3: '0109'
-}
 export const cards = [
     {
         id: 'card-rose',

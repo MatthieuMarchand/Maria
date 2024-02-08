@@ -9,23 +9,16 @@ export const useStore = defineStore('app', {
         data: null
     }),
     actions: {
-        updateCurrentPage(newPage) {
-            this.page = newPage
+        nextPage(newPage = null, screenId = null) {
+            this.dataOfScreen = screenId ? this.data.find(screen => screen.id === screenId) : this.data.find(screen => screen.id === this.dataOfScreen.nextScreen)
+            this.page = newPage ? newPage : this.dataOfScreen.type
         },
-        updatePage(newPage, screenId) {
-            this.page = newPage
-            this.dataOfScreen = this.data.find(screen => screen.id === screenId)
-        },
-        nextPage() {
-            this.dataOfScreen = this.data.find(screen => screen.id === this.dataOfScreen.nextScreen)
-            this.page = this.dataOfScreen.type
-        },
-        async fetchData() {
+        async initialize() {
             try {
                 const response = await fetch('/data.yaml')
                 const yamlContent = await response.text()
                 this.data = yaml.load(yamlContent).screens
-                this.dataOfScreen = yaml.load(yamlContent).screens[0]
+                this.dataOfScreen = this.getScreenById("introduction")
                 console.log('--------------------------------')
                 console.log(yaml.load(yamlContent).screens)
                 console.log('--------------------------------')

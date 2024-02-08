@@ -1,6 +1,6 @@
 <template>
     <main id="main_CreditsPage">
-        <button @click="updateCurrentPage(pages.HOME_PAGE)" class="back-icon"><img src="/images/icons/chevron-left.svg" alt="back icon" /></button>
+        <button @click="useStore().nextPage(pages.HOME_PAGE)" class="back-icon"><img src="/images/icons/chevron-left.svg" alt="back icon" /></button>
         <div class="container">
             <div class="credits-container">
                 <p class="credits">Crédits</p>
@@ -25,12 +25,6 @@
 <script setup>
 import { pages } from '@/assets/js/config.js'
 import { useStore } from '/src/assets/js/store.js'
-
-const store = useStore()
-
-const updateCurrentPage = newPage => {
-    store.updateCurrentPage(newPage)
-}
 </script>
 
 <style lang="scss">

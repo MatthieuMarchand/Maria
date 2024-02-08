@@ -9,24 +9,26 @@
 </template>
 
 <script setup>
-import { ref, defineProps, watch, onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { useStore } from '@/assets/js/store.js'
 import { pages } from '@/assets/js/config.js'
 
-const props = defineProps(['dialogues', 'nextScreen'])
 const count = ref(0)
-let onSeerPageBase = false
-let currentDialogue = ref('Error 404 :(')
 
+let currentDialogue = ref('Error 404 :(')
 let cards = null
 let buttonNext = null
+let dialogs = useStore().dataOfScreen.dialogs
 
 function nextDialogue() {
-    if (count.value < props.dialogues.length - 1) {
+    if (count.value < dialogs.length - 1) {
         count.value++
     } else {
-        // buttonNext.style.display = "none"
-        useStore().updatePage(pages.CODE_PAGE, useStore().dataOfScreen.nextScreen)
+        if (useStore().dataOfScreen.nextScreen) {
+            useStore().nextPage(pages.CODE_PAGE, useStore().dataOfScreen.nextScreen)
+        } else {
+            buttonNext.style.display = "none"
+        }
     }
 }
 
@@ -34,31 +36,28 @@ onMounted(() => {
     cards = document.getElementById('cards')
     buttonNext = document.getElementById('button-next')
 
-    if (useStore().dataOfScreen.type === 'SeerPageBase') {
-        onSeerPageBase = true
-        currentDialogue.value = props.dialogues[count.value].text
-    } else {
-        onSeerPageBase = false
-        currentDialogue.value = props.dialogues[count.value]
-    }
+    currentDialogue.value = dialogs[count.value].text
 
-    if (onSeerPageBase) {
-        cards.style.display = 'none'
-    } else {
+    if (dialogs[count.value].with_cards) {
         cards.style.display = 'flex'
         cards.classList.add('cards-active')
+    } else {
+        cards.style.display = 'none'
+    }
+
+    if (!useStore().dataOfScreen.nextScreen && count.value <= dialogs.length) {
+        buttonNext.style.display = "none"
     }
 })
 
 watch(count, () => {
-    if (onSeerPageBase) {
-        currentDialogue.value = props.dialogues[count.value].text
-        if (props.dialogues[count.value].with_cards) {
-            cards.style.display = 'flex'
-            cards.classList.add('cards-active')
-        }
+    currentDialogue.value = dialogs[count.value].text
+
+    if (dialogs[count.value].with_cards) {
+        cards.style.display = 'flex'
+        cards.classList.add('cards-active')
     } else {
-        currentDialogue.value = props.dialogues[count.value]
+        cards.style.display = 'none'
     }
 })
 </script>

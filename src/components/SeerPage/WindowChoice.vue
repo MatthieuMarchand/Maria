@@ -2,9 +2,9 @@
     <main id="main_WindowChoice">
         <p>La rose incarne la vie et le renouveau, offrant espoir et vitalité même dans les moments les plus sombres.</p>
 
-        <button class="button-link play-card">
-            <span>Jouer la carte</span>
-        </button>
+        <button class="button-link play-card"
+          @click="useStore().nextPage(null, useStore().dataOfScreen.cards[0].nextScreen)"
+        ><span>Jouer la carte</span></button>
 
         <button @click="disabledMe" class="button-link cancel">
             <span>Annuler</span>
@@ -14,6 +14,7 @@
 
 <script setup>
 import { defineProps } from 'vue'
+import {useStore} from "@/assets/js/store.js";
 const { disabledWindowChoice, removeActiveCardClasses } = defineProps(['disabledWindowChoice', 'removeActiveCardClasses'])
 const disabledMe = () => {
     disabledWindowChoice()

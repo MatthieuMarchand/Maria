@@ -5,10 +5,10 @@
             <img src="/images/tree.png" alt="Arbre avec une porte à l'intérieur" />
         </div>
         <div>
-            <button @click="updatePage(pages.SEER_PAGE)" class="button-link play">
+            <button @click="useStore().nextPage(pages.SEER_PAGE, 'introduction')" class="button-link play">
                 <span>Ouvrir la porte</span>
             </button>
-            <button @click="updatePage(pages.CREDITS_PAGE)" class="button-link">
+            <button @click="useStore().nextPage(pages.CREDITS_PAGE)" class="button-link">
                 <span>crédits</span>
             </button>
         </div>
@@ -19,10 +19,6 @@
 import { pages } from '/src/assets/js/config.js'
 import LoadingPage from '@/components/HomePage/LoadingPage.vue'
 import { useStore } from '/src/assets/js/store.js'
-
-const updatePage = (newPage) => {
-    useStore().updatePage(newPage,"introduction")
-}
 </script>
 
 <style lang="scss">

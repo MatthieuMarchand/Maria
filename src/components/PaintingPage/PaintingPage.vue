@@ -1,9 +1,11 @@
 <template>
     <main id="main_PaintingPage">
         <div class="painting-page-container">
+
             <div class="image-container">
                 <img :src="'/images/pictures/pictures' + useStore().dataOfScreen.img" alt="Les deux fillettes" />
             </div>
+
             <div class="story">
                 <p>{{ useStore().dataOfScreen.story }}</p>
 
@@ -11,20 +13,13 @@
                     <span>{{ useStore().dataOfScreen.label }}</span>
                 </button>
             </div>
+
         </div>
     </main>
 </template>
 
 <script setup>
 import { useStore } from '@/assets/js/store.js'
-import { defineProps } from 'vue'
-
-const props = defineProps(['trame'])
-console.log(props.trame)
-
-function changePage(nextPage) {
-    useStore().updateCurrentPage(nextPage)
-}
 </script>
 
 <style lang="scss">

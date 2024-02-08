@@ -1,26 +1,13 @@
 <template>
     <main id="main_SeerPage">
-        <Dialogue
-            :dialogues="dialogues"
-            :next-screen="useStore().dataOfScreen.nextScreen"
-        />
-        <Cards />
+        <Dialogue/>
+        <Cards/>
     </main>
 </template>
 
 <script setup>
 import Cards from '@/components/SeerPage/Cards.vue'
 import Dialogue from '@/components/SeerPage/Dialogue.vue'
-import { useStore } from "@/assets/js/store.js";
-
-let dialogues = []
-
-console.log(useStore().dataOfScreen)
-
-useStore().dataOfScreen.dialogs.forEach(dialog => {
-  dialogues.push(dialog)
-})
-
 </script>
 
 <style lang="scss">

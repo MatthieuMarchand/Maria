@@ -1,12 +1,9 @@
 <template>
     <main id="main_EndingPage">
         <div class="ending-page-container">
-            <h2>Vous êtes <span>la main divine</span></h2>
-            <p>
-                Grâce à vos choix vous avez réussi à sauver Maria et l’avez même bénie : un enfant est né, symbolisant l’acceptation divine. Vous êtes libre de
-                rentrer chez vous.
-            </p>
-            <button @click="updateCurrentPage(pages.HOME_PAGE)" class="button-primary">Retourner dans le passé</button>
+            <h2>Vous êtes <span>{{ useStore().dataOfScreen.title }}</span></h2>
+            <p>{{ useStore().dataOfScreen.text }}</p>
+            <button @click="useStore().nextPage(pages.HOME_PAGE, 'introduction')" class="button-primary">Retourner dans le passé</button>
         </div>
     </main>
 </template>
@@ -14,12 +11,6 @@
 <script setup>
 import { pages } from '@/assets/js/config.js'
 import { useStore } from '@/assets/js/store.js'
-
-const store = useStore()
-
-const updateCurrentPage = newPage => {
-    store.updateCurrentPage(newPage)
-}
 </script>
 
 <style lang="scss">

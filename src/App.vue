@@ -30,5 +30,5 @@ import EndingPage from '@/components/EndingPage/EndingPage.vue'
 
 // Start
 const currentPage = computed(() => useStore().page)
-useStore().fetchData()
+useStore().initialize()
 </script>

@@ -1,14 +1,18 @@
 <template>
     <main id="main_CodePage">
         <div class="container">
+
             <p class="text">Maria te demande de trouver le tableau {{ useStore().dataOfScreen.text }}</p>
+
             <img :src="'/images/museum-maps' + useStore().dataOfScreen.img" alt="plan du musée pour aller au prochain tableau" />
+
             <div id="inputContainer">
                 <label for="code-picture">Entrer le code :</label>
                 <input name="code-picture" placeholder="Exemple : &nbsp; A1E2T" />
                 <button class="button-primary">Valider</button>
             </div>
         </div>
+
         <button @click="useStore().nextPage()" class="button-link">
             <span>Je n'ai pas trouvé le code.</span>
         </button>
@@ -16,11 +20,7 @@
 </template>
 
 <script setup>
-import { pages } from '@/assets/js/config.js'
 import { useStore } from '@/assets/js/store.js'
-function changePage(nextPage) {
-    useStore().updateCurrentPage(nextPage)
-}
 </script>
 
 <style lang="scss">
