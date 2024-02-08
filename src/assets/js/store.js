@@ -13,7 +13,7 @@ export const useStore = defineStore('app', {
         },
         async fetchData() {
             try {
-                const response = await fetch('/src/assets/data.yaml');
+                const response = await fetch('/data.yaml');
                 const yamlContent = await response.text();
                 this.data = yaml.load(yamlContent);
             } catch (error) {
