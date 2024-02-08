@@ -16,7 +16,11 @@
 </template>
 
 <script setup>
-import { useStore } from "@/assets/js/store.js";
+import { pages } from '@/assets/js/config.js'
+import { useStore } from '@/assets/js/store.js'
+function changePage(nextPage) {
+    useStore().updateCurrentPage(nextPage)
+}
 </script>
 
 <style lang="scss">
@@ -39,7 +43,7 @@ import { useStore } from "@/assets/js/store.js";
         flex-direction: column;
         gap: 1rem;
         height: fit-content;
-        max-width: 25rem;
+        max-width: 30rem;
         margin: 0 auto;
         padding: 2rem 0;
         width: 100%;

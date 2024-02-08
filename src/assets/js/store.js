@@ -1,6 +1,6 @@
 import { pages } from './config.js'
 import { defineStore } from 'pinia'
-import yaml from 'js-yaml';
+import yaml from 'js-yaml'
 
 export const useStore = defineStore('app', {
     state: () => ({
@@ -10,7 +10,7 @@ export const useStore = defineStore('app', {
     }),
     actions: {
         updateCurrentPage(newPage) {
-            this.page = newPage;
+            this.page = newPage
         },
         updatePage(newPage, screenId) {
             this.page = newPage;
@@ -22,6 +22,7 @@ export const useStore = defineStore('app', {
         },
         async fetchData() {
             try {
+<<<<<<< HEAD
                 const response = await fetch('/data.yaml');
                 const yamlContent = await response.text();
                 this.data = yaml.load(yamlContent).screens;
@@ -29,9 +30,15 @@ export const useStore = defineStore('app', {
                 console.log("--------------------------------")
                 console.log(yaml.load(yamlContent).screens)
                 console.log("--------------------------------")
+=======
+                const response = await fetch('/data.yaml')
+                const yamlContent = await response.text()
+                this.data = yaml.load(yamlContent)
+>>>>>>> cb59c49 (fix: corrige le responsive et ajuste l'intégration de la page painting)
             } catch (error) {
-                console.error('Erreur lors de la lecture du fichier YAML :', error);
+                console.error('Erreur lors de la lecture du fichier YAML :', error)
             }
+<<<<<<< HEAD
         },
         getScreenById(targetId) {
             const targetScreen = this.data.find(screen => screen.id === targetId);
@@ -39,3 +46,8 @@ export const useStore = defineStore('app', {
         }
     },
 });
+=======
+        }
+    }
+})
+>>>>>>> cb59c49 (fix: corrige le responsive et ajuste l'intégration de la page painting)
