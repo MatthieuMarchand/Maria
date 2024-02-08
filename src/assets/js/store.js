@@ -3,7 +3,7 @@ import { pages } from './config.js'
 
 export const useStore = defineStore('app', {
     state: () => ({
-        page: pages.CODE_PAGE,
+        page: pages.CREDITS_PAGE,
         data: null
     }),
     actions: {
