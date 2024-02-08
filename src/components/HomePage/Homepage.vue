@@ -32,7 +32,7 @@ const updateCurrentPage = newPage => {
 
 #main_HomePage {
     animation: HomePage_opacity 1.6s ease-out 1.8s forwards;
-    background-image: url('/images/backgrounds/neutral-bg.png');
+    background-image: url('/images/backgrounds/mobile/neutral-bg.png');
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;

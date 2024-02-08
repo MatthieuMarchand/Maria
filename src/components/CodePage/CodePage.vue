@@ -26,13 +26,13 @@
 @import '../../assets/scss/settings';
 
 #main_CodePage {
-    //Change background
-    background-image: url('/images/backgrounds/neutral-bg-lights.png');
-    background-size: cover;
+    background-image: url('/images/backgrounds/mobile/neutral-bg-lights.png');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     box-sizing: border-box;
     display: flex;
+    height: auto;
     justify-content: center;
     overflow: auto;
     padding: 0 2rem;
@@ -59,7 +59,7 @@
     }
 
     .button-link {
-        margin: auto auto;
+        margin: 2rem auto auto;
         width: 100%;
 
         span {

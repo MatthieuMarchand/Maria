@@ -36,7 +36,7 @@ getDialogues()
 @import '../../assets/scss/settings';
 
 #main_SeerPage {
-    background-image: url('/images/backgrounds/seer-mouth-open.png');
+    background-image: url('/images/backgrounds/mobile/seer-mouth-open.png');
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
