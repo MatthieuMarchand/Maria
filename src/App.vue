@@ -10,6 +10,8 @@
             <SeerPage v-else-if="currentPage === pages.SEER_PAGE" />
 
             <CreditsPage v-else-if="currentPage === pages.CREDITS_PAGE" />
+
+            <EndingPage v-else-if="currentPage === pages.ENDING_PAGE" />
         </div>
     </div>
 </template>
@@ -24,9 +26,9 @@ import CodePage from '@/components/CodePage/CodePage.vue'
 import PaintingPage from '@/components/PaintingPage/PaintingPage.vue'
 import SeerPage from '@/components/SeerPage/SeerPage.vue'
 import CreditsPage from '@/components/Credits/CreditsPage.vue'
+import EndingPage from '@/components/EndingPage/EndingPage.vue'
 
-const currentPage = computed(() => useStore().page);
+const currentPage = computed(() => useStore().page)
 
-useStore().fetchData();
-
+useStore().fetchData()
 </script>

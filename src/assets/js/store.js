@@ -4,7 +4,7 @@ import yaml from 'js-yaml'
 
 export const useStore = defineStore('app', {
     state: () => ({
-        page: pages.HOME_PAGE,
+        page: pages.ENDING_PAGE,
         data: null
     }),
     actions: {
