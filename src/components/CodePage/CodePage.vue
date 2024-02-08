@@ -1,22 +1,17 @@
 <template>
     <main id="main_CodePage">
         <div class="container">
-            <p class="text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aspernatur blanditiis distinctio inventore ipsam necessitatibus nisi
-                possimus quae voluptates.
-            </p>
+            <p class="text">Maria te demande de trouver le tableau Paysages avec figures ou Les deux fillettes.</p>
             <img src="/images/museum-maps/map-step-1.webp" alt="plan du musée pour aller au prochain tableau" />
-
             <div id="inputContainer">
                 <label for="code-picture">Entrer le code :</label>
                 <input name="code-picture" placeholder="Exemple : &nbsp; A1E2T" />
                 <button class="button-primary">Valider</button>
             </div>
-
-            <button class="button-link">
-                <span>Je n'ai pas trouvé le code.</span>
-            </button>
         </div>
+        <button class="button-link">
+            <span>Je n'ai pas trouvé le code.</span>
+        </button>
     </main>
 </template>
 
@@ -31,17 +26,19 @@
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: center;
     overflow: auto;
     padding: 0 2rem;
 
     .container {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 1rem;
-        grid-template-columns: 1fr;
-        height: 100%;
+        height: fit-content;
         max-width: 25rem;
+        margin: 0 auto;
         padding: 2rem 0;
         width: 100%;
 
@@ -58,7 +55,7 @@
     }
 
     .button-link {
-        margin: 2rem auto auto;
+        margin: auto;
         width: 100%;
 
         span {
@@ -72,6 +69,7 @@
     align-items: baseline;
     display: flex;
     flex-direction: column;
+    margin-top: 4rem;
     position: relative;
 
     label {
@@ -81,15 +79,15 @@
     }
 
     input {
-        width: 100%;
-        margin-bottom: 1rem;
-        padding: 1rem;
-        border: unset;
-        color: $black-background;
         background-color: white;
+        border: unset;
         border-radius: 0.5rem;
         box-sizing: border-box;
+        color: $black-background;
+        margin-bottom: 1rem;
+        padding: 1rem;
         text-transform: uppercase;
+        width: 100%;
 
         &::placeholder {
             text-transform: none;
