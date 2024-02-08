@@ -11,10 +11,17 @@ screens:
           - text: À condition de m’aider, bien évidemment ...
           - text: Tiens, voici trois cartes qui te guideront dans ton périple.
             with_cards: true
+            click: false
           - text: Mais fais attention à tes actions car chacune d’elles pourra changer les fils d’or du Destin.
             with_cards: true
+            click: false
           - text: Le sort est maintenant entre tes mains Voyageur.
             with_cards: true
+            click: false
+      cards:
+          - id: sword
+          - id: rose
+          - id: chalice
       nextScreen: code-1
 
     # First time the user has to enter a code
@@ -41,14 +48,15 @@ screens:
       type: SeerPage
       dialogs:
           - text: N’oubliez pas, chacune de vos cartes est unique. Votre choix aura des conséquences que vous ne serez peut-être pas près à assumer …
+            with_cards: true
       cards:
           - id: sword
             text: ouais c'est cool
             nextScreen: story-1
-          - id: flower
+          - id: rose
             text: ouais c'est cool
             nextScreen: story-2
-          - id: cup
+          - id: chalice
             text: ouais c'est cool
             nextScreen: story-3
 
@@ -81,7 +89,9 @@ screens:
     # Second choice of the user
     - id: story-1-choice-2
       type: SeerPage
-      dialog: Je sens l’odeur du sang et des chaires brûlées, quelle magnifique scène …
+      dialog:
+          - text: Je sens l’odeur du sang et des chaires brûlées, quelle magnifique scène …
+            with_cards: true
       cards:
           - id: flower
             text: ouais c'est cool
@@ -117,7 +127,9 @@ screens:
     # Final choice of the user - St Just
     - id: story-1-1-choice-3
       type: SeerPage
-      dialog: Le temps presse …
+      dialog:
+          - text: Le temps presse …
+            with_cards: true
       cards:
           - id: cup
             text: ouais c'est cool
@@ -164,7 +176,9 @@ screens:
     # Final choice of the user - St Just
     - id: story-1-2-choice-3
       type: SeerPage
-      dialog: La liberté me tend enfin les bras …
+      dialog:
+          - text: La liberté me tend enfin les bras …
+            with_cards: true
       cards:
           - id: flower
             text: ouais c'est cool
