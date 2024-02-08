@@ -2,7 +2,7 @@
     <LoadingPage />
     <main id="main_HomePage">
         <div class="homepage-tree-container">
-            <img src="/images/tree.svg" alt="Arbre avec une porte à l'intérieur" />
+            <img src="/images/tree.png" alt="Arbre avec une porte à l'intérieur" />
         </div>
         <div>
             <button @click="updateCurrentPage(pages.SEER_PAGE)" class="button-link play">
