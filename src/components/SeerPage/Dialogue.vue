@@ -11,10 +11,12 @@
 <script setup>
 import { ref, defineProps, watch, onMounted } from 'vue'
 import { useStore } from "@/assets/js/store.js";
+import { pages } from "@/assets/js/config.js";
 
-const props = defineProps(['dialogues', 'nextPage'])
+const props = defineProps(['dialogues', 'nextScreen'])
 const count = ref(0)
-const currentDialogue = ref()
+let onSeerPageBase = false
+let currentDialogue = ref("Error 404 :(")
 
 let cards = null
 let buttonNext = null
@@ -24,23 +26,40 @@ function nextDialogue() {
         count.value++
     } else {
         // buttonNext.style.display = "none"
-        useStore().updateCurrentPage(props.nextPage)
+        useStore().updatePage(pages.CODE_PAGE, useStore().dataOfScreen.nextScreen)
     }
 }
 
 onMounted(() => {
-    currentDialogue.value = props.dialogues[count.value].text
     cards = document.getElementById("cards")
-    cards.style.display = "none"
     buttonNext = document.getElementById("button-next")
+
+    if (useStore().dataOfScreen.type === "SeerPageBase") {
+        onSeerPageBase = true
+        currentDialogue.value = props.dialogues[count.value].text
+    } else {
+        onSeerPageBase = false
+        currentDialogue.value = props.dialogues[count.value]
+    }
+
+    if (onSeerPageBase) {
+        cards.style.display = "none"
+    } else {
+        cards.style.display = "flex"
+        cards.classList.add("cards-active")
+    }
 })
 
 watch(count, () => {
+  if (onSeerPageBase) {
     currentDialogue.value = props.dialogues[count.value].text
     if (props.dialogues[count.value].with_cards) {
         cards.style.display = "flex"
         cards.classList.add("cards-active")
     }
+  } else {
+    currentDialogue.value = props.dialogues[count.value]
+  }
 })
 </script>
 

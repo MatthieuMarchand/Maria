@@ -2,31 +2,15 @@
     <main id="main_PaintingPage">
 
         <div class="image-container">
-            <img src="/images/pictures/picture-1/painting1-flower.png" alt="Les deux fillettes" />
+            <img :src="'/images/pictures/pictures' + useStore().dataOfScreen.img" alt="Les deux fillettes" />
         </div>
 
         <div class="dialog">
 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo
-            perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum
-            optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis
-            sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet
-            assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit
-            vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda
-            dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas
-            voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea
-            hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate
-            voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque
-            magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus.
-          </p>
+          <p>{{ useStore().dataOfScreen.story }}</p>
 
-          <button @click="changePage(pages.SEER_PAGE)" class="button-next">
-            <span>Passer au choix</span>
+          <button @click="useStore().nextPage()" class="button-next">
+            <span>{{ useStore().dataOfScreen.label }}</span>
           </button>
 
         </div>
@@ -35,8 +19,12 @@
 </template>
 
 <script setup>
-import { pages } from "@/assets/js/config.js";
 import { useStore } from "@/assets/js/store.js";
+import { defineProps } from 'vue'
+
+const props = defineProps(['trame'])
+console.log(props.trame)
+
 function changePage(nextPage) {
   useStore().updateCurrentPage(nextPage)
 }

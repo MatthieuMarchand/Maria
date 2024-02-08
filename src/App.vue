@@ -1,15 +1,15 @@
 <template>
     <div>
         <div>
-            <HomePage v-if="currentPage === pages.HOME_PAGE" />
+            <HomePage v-if="currentPage === pages.HOME_PAGE"/>
 
-            <CodePage v-else-if="currentPage === pages.CODE_PAGE" />
+            <CodePage v-else-if="currentPage === pages.CODE_PAGE"/>
 
-            <PaintingPage v-else-if="currentPage === pages.PAINTING_PAGE" />
+            <PaintingPage v-else-if="currentPage === pages.PAINTING_PAGE"/>
 
-            <SeerPage v-else-if="currentPage === pages.SEER_PAGE" />
+            <SeerPage v-else-if="currentPage === pages.SEER_PAGE"/>
 
-            <CreditsPage v-else-if="currentPage === pages.CREDITS_PAGE" />
+            <CreditsPage v-else-if="currentPage === pages.CREDITS_PAGE"/>
         </div>
     </div>
 </template>
@@ -25,8 +25,8 @@ import PaintingPage from '@/components/PaintingPage/PaintingPage.vue'
 import SeerPage from '@/components/SeerPage/SeerPage.vue'
 import CreditsPage from '@/components/Credits/CreditsPage.vue'
 
+// Start
 const currentPage = computed(() => useStore().page);
-
-useStore().fetchData();
+useStore().fetchData()
 
 </script>
