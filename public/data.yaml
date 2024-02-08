@@ -1,7 +1,7 @@
 screens:
     # Introduction
     - id: introduction
-      type: SeerPageBase
+      type: SeerPage
       dialogs:
           - text: Ah … Te voilà, je t’attendais.
           - text: Je sais, je sais, tu ne comprends sûrement pas pourquoi tu es ici. Mais laisse moi d’abord me présenter.
@@ -19,9 +19,9 @@ screens:
             with_cards: true
             click: false
       cards:
-          - id: sword
-          - id: rose
-          - id: chalice
+          - id: card-sword
+          - id: card-rose
+          - id: card-chalice
       nextScreen: code-1
 
     # First time the user has to enter a code
@@ -50,14 +50,11 @@ screens:
           - text: N’oubliez pas, chacune de vos cartes est unique. Votre choix aura des conséquences que vous ne serez peut-être pas près à assumer …
             with_cards: true
       cards:
-          - id: sword
-            text: ouais c'est cool
+          - id: card-sword
             nextScreen: story-1
-          - id: rose
-            text: ouais c'est cool
+          - id: card-rose
             nextScreen: story-2
-          - id: chalice
-            text: ouais c'est cool
+          - id: card-chalice
             nextScreen: story-3
 
     # STORY 1
@@ -93,11 +90,9 @@ screens:
           - text: Je sens l’odeur du sang et des chaires brûlées, quelle magnifique scène …
             with_cards: true
       cards:
-          - id: flower
-            text: ouais c'est cool
+          - id: card-rose
             nextScreen: story-1-1
-          - id: cup
-            text: ouais c'est cool
+          - id: card-chalice
             nextScreen: story-1-2
 
     # STORY 1.1
@@ -131,8 +126,7 @@ screens:
           - text: Le temps presse …
             with_cards: true
       cards:
-          - id: cup
-            text: ouais c'est cool
+          - id: card-chalice
             nextScreen: story-1-1-1
 
     # Story 1.1.1 - the user chose the cup - St Just
@@ -180,8 +174,7 @@ screens:
           - text: La liberté me tend enfin les bras …
             with_cards: true
       cards:
-          - id: flower
-            text: ouais c'est cool
+          - id: card-rose
             nextScreen: story-1-2-1
 
     # Story 1.2.1 - the user chose the flower - St Just
