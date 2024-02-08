@@ -4,8 +4,7 @@
             <div class="image-container">
                 <img :src="'/images/pictures/pictures' + useStore().dataOfScreen.img" alt="Les deux fillettes" />
             </div>
-
-            <div class="dialog">
+            <div class="story">
                 <p>{{ useStore().dataOfScreen.story }}</p>
 
                 <button @click="useStore().nextPage()" class="button-next">

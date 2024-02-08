@@ -16,7 +16,11 @@
 </template>
 
 <script setup>
+import { pages } from '@/assets/js/config.js'
 import { useStore } from '@/assets/js/store.js'
+function changePage(nextPage) {
+    useStore().updateCurrentPage(nextPage)
+}
 </script>
 
 <style lang="scss">
