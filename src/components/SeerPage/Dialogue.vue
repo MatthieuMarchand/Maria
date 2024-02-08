@@ -44,7 +44,7 @@ watch(count, () => {
     margin: 3rem auto;
     padding: 1rem;
     position: relative;
-    max-width: 400px;
+    max-width: 25rem;
     width: 100%;
 
     p,
