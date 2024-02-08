@@ -10,7 +10,7 @@
 
 <script setup>
 import { ref, defineProps, watch, onMounted } from 'vue'
-import { useStore } from "@/assets/js/store.js";
+import { useStore } from '@/assets/js/store.js'
 
 const props = defineProps(['dialogues', 'nextPage'])
 const count = ref(0)
@@ -30,16 +30,16 @@ function nextDialogue() {
 
 onMounted(() => {
     currentDialogue.value = props.dialogues[count.value].text
-    cards = document.getElementById("cards")
-    cards.style.display = "none"
-    buttonNext = document.getElementById("button-next")
+    cards = document.getElementById('cards')
+    cards.style.display = 'none'
+    buttonNext = document.getElementById('button-next')
 })
 
 watch(count, () => {
     currentDialogue.value = props.dialogues[count.value].text
     if (props.dialogues[count.value].with_cards) {
-        cards.style.display = "flex"
-        cards.classList.add("cards-active")
+        cards.style.display = 'flex'
+        cards.classList.add('cards-active')
     }
 })
 </script>
@@ -54,7 +54,7 @@ watch(count, () => {
     margin: 3rem auto;
     padding: 1rem;
     position: relative;
-    max-width: 25rem;
+    max-width: 30rem;
     width: 100%;
 
     p,

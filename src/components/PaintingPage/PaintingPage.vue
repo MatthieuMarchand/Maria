@@ -1,44 +1,42 @@
 <template>
     <main id="main_PaintingPage">
+        <div class="painting-page-container">
+            <div class="image-container">
+                <img src="/images/pictures/picture-1/painting1-flower.png" alt="Les deux fillettes" />
+            </div>
+            <div class="story">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque
+                    magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem
+                    minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate
+                    voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea
+                    hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas
+                    voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores
+                    doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae
+                    voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda
+                    dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut
+                    velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet
+                    assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit
+                    amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis
+                    sit, ut velit vitae voluptas voluptate voluptatibus.
+                </p>
 
-        <div class="image-container">
-            <img src="/images/pictures/picture-1/painting1-flower.png" alt="Les deux fillettes" />
+                <button @click="changePage(pages.SEER_PAGE)" class="button-next">
+                    <span>Passer au choix</span>
+                </button>
+            </div>
         </div>
-
-        <div class="dialog">
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo
-            perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum
-            optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis
-            sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet
-            assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit
-            vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda
-            dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas
-            voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea
-            hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque magnam nemo perferendis sit, ut velit vitae voluptas voluptate
-            voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus nostrum optio! Ad amet assumenda dolores doloribus ea hic itaque
-            magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus.
-          </p>
-
-          <button @click="changePage(pages.SEER_PAGE)" class="button-next">
-            <span>Passer au choix</span>
-          </button>
-
-        </div>
-
     </main>
 </template>
 
 <script setup>
-import { pages } from "@/assets/js/config.js";
-import { useStore } from "@/assets/js/store.js";
+import { pages } from '@/assets/js/config.js'
+import { useStore } from '@/assets/js/store.js'
 function changePage(nextPage) {
-  useStore().updateCurrentPage(nextPage)
+    useStore().updateCurrentPage(nextPage)
 }
 </script>
 
@@ -46,10 +44,13 @@ function changePage(nextPage) {
 @import '../../assets/scss/settings';
 
 #main_PaintingPage {
+    background-image: url('/images/backgrounds/mobile/neutral-bg.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
     box-sizing: border-box;
-    max-height: 100vh;
+    height: auto;
     overflow: hidden;
-    padding-bottom: 5rem;
 
     ::-webkit-scrollbar {
         width: 5px;
@@ -65,26 +66,28 @@ function changePage(nextPage) {
         background: #555;
     }
 
+    .painting-page-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        max-width: 30rem;
+        margin: auto;
+        height: 100svh;
+    }
+
     .image-container {
         position: relative;
+        height: fit-content;
 
         &::after {
+            background: linear-gradient(180deg, rgba(23, 22, 23, 0) 0%, rgba(23, 21, 23, 0) 54.5%, #151415 77.5%, #121112 90%, rgba(20, 19, 20, 0) 100%);
             content: '';
             height: 100%;
             width: 100%;
             display: block;
             position: absolute;
             top: 4rem;
-            background: linear-gradient(
-                180deg,
-                rgba(42, 42, 42, 0) 0%,
-                rgba(42, 42, 42, 0) 54.5%,
-                #2a2a2a 76%,
-                #2a2a2a 85.5%,
-                rgba(42, 42, 42, 0.68) 90.5%,
-                rgba(42, 42, 42, 0.52) 93%,
-                rgba(42, 42, 42, 0) 100%
-            );
             z-index: 10;
         }
     }
@@ -96,25 +99,25 @@ function changePage(nextPage) {
         height: 27rem;
         object-fit: cover;
     }
-    .dialog {
+
+    .story {
         overflow: auto;
-        margin: -2rem 1rem 1rem;
-        max-height: 10rem;
-        padding: 4rem 1rem 0;
+        margin: 2rem 1rem;
+        padding: 1rem;
         display: grid;
         grid-template-columns: 1fr;
     }
 
-    .button-next{
-      cursor: pointer;
-      margin: 2rem auto;
-      padding: 1rem 2rem 1rem 2rem;
-      background-color: $yellow-text;
-      border-radius: 5px;
+    .button-next {
+        cursor: pointer;
+        margin: 2rem auto;
+        padding: 1rem 2rem 1rem 2rem;
+        background-color: $yellow-text;
+        border-radius: 5px;
 
-      span{
-        color: $black-background;
-      }
+        span {
+            color: $black-background;
+        }
     }
 }
 </style>
