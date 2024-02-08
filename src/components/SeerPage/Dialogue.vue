@@ -10,13 +10,13 @@
 
 <script setup>
 import { ref, defineProps, watch, onMounted } from 'vue'
-import { useStore } from "@/assets/js/store.js";
-import { pages } from "@/assets/js/config.js";
+import { useStore } from '@/assets/js/store.js'
+import { pages } from '@/assets/js/config.js'
 
 const props = defineProps(['dialogues', 'nextScreen'])
 const count = ref(0)
 let onSeerPageBase = false
-let currentDialogue = ref("Error 404 :(")
+let currentDialogue = ref('Error 404 :(')
 
 let cards = null
 let buttonNext = null
@@ -31,10 +31,10 @@ function nextDialogue() {
 }
 
 onMounted(() => {
-    cards = document.getElementById("cards")
-    buttonNext = document.getElementById("button-next")
+    cards = document.getElementById('cards')
+    buttonNext = document.getElementById('button-next')
 
-    if (useStore().dataOfScreen.type === "SeerPageBase") {
+    if (useStore().dataOfScreen.type === 'SeerPageBase') {
         onSeerPageBase = true
         currentDialogue.value = props.dialogues[count.value].text
     } else {
@@ -43,23 +43,23 @@ onMounted(() => {
     }
 
     if (onSeerPageBase) {
-        cards.style.display = "none"
+        cards.style.display = 'none'
     } else {
-        cards.style.display = "flex"
-        cards.classList.add("cards-active")
+        cards.style.display = 'flex'
+        cards.classList.add('cards-active')
     }
 })
 
 watch(count, () => {
-  if (onSeerPageBase) {
-    currentDialogue.value = props.dialogues[count.value].text
-    if (props.dialogues[count.value].with_cards) {
-        cards.style.display = "flex"
-        cards.classList.add("cards-active")
+    if (onSeerPageBase) {
+        currentDialogue.value = props.dialogues[count.value].text
+        if (props.dialogues[count.value].with_cards) {
+            cards.style.display = 'flex'
+            cards.classList.add('cards-active')
+        }
+    } else {
+        currentDialogue.value = props.dialogues[count.value]
     }
-  } else {
-    currentDialogue.value = props.dialogues[count.value]
-  }
 })
 </script>
 
@@ -73,7 +73,7 @@ watch(count, () => {
     margin: 3rem auto;
     padding: 1rem;
     position: relative;
-    max-width: 25rem;
+    max-width: 30rem;
     width: 100%;
 
     p,
