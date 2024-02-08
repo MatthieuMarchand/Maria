@@ -25,5 +25,8 @@ import PaintingPage from '@/components/PaintingPage/PaintingPage.vue'
 import SeerPage from '@/components/SeerPage/SeerPage.vue'
 import CreditsPage from '@/components/Credits/CreditsPage.vue'
 
-const currentPage = computed(() => useStore().page)
+const currentPage = computed(() => useStore().page);
+
+useStore().fetchData();
+
 </script>

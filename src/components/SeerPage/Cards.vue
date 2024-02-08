@@ -55,13 +55,13 @@ const disabledWindowChoice = () => {
 }
 
 #cards {
+    display: none;
     position: absolute;
     left: 0;
     bottom: -1.5rem;
     width: 100%;
-    display: flex;
     justify-content: center;
-    animation: cards_start 0.8s ease-in-out;
+    transform: translateY(80%);
 
     .card {
         transition-duration: 0.4s;
@@ -71,7 +71,6 @@ const disabledWindowChoice = () => {
 
     #card-rose {
         @include transform-card-rose;
-        animation: card_rose 1s ease-in-out;
     }
     #card-chalice {
         z-index: 1;
@@ -79,6 +78,16 @@ const disabledWindowChoice = () => {
     #card-sword {
         z-index: 1;
         @include transform-card-sword;
+    }
+}
+
+#cards.cards-active {
+    display: flex;
+    animation: cards_start 0.8s ease-in-out forwards;
+    #card-rose {
+        animation: card_rose 1s ease-in-out;
+    }
+    #card-sword {
         animation: card_sword 1s ease-in-out;
     }
 }
