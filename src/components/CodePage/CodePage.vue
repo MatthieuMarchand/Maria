@@ -9,13 +9,19 @@
                 <button class="button-primary">Valider</button>
             </div>
         </div>
-        <button class="button-link">
+        <button @click="changePage(pages.PAINTING_PAGE)" class="button-link">
             <span>Je n'ai pas trouvé le code.</span>
         </button>
     </main>
 </template>
 
-<script setup></script>
+<script setup>
+import { pages } from "@/assets/js/config.js";
+import { useStore } from "@/assets/js/store.js";
+function changePage(nextPage) {
+    useStore().updateCurrentPage(nextPage)
+}
+</script>
 
 <style lang="scss">
 @import '../../assets/scss/settings';

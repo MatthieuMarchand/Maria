@@ -25,7 +25,7 @@
             magnam nemo perferendis sit, ut velit vitae voluptas voluptate voluptatibus.
           </p>
 
-          <button class="button-next">
+          <button @click="changePage(pages.SEER_PAGE)" class="button-next">
             <span>Passer au choix</span>
           </button>
 
@@ -35,6 +35,11 @@
 </template>
 
 <script setup>
+import { pages } from "@/assets/js/config.js";
+import { useStore } from "@/assets/js/store.js";
+function changePage(nextPage) {
+  useStore().updateCurrentPage(nextPage)
+}
 </script>
 
 <style lang="scss">

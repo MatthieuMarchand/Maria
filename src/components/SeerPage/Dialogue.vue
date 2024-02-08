@@ -10,8 +10,9 @@
 
 <script setup>
 import { ref, defineProps, watch, onMounted } from 'vue'
+import { useStore } from "@/assets/js/store.js";
 
-const props = defineProps(['dialogues'])
+const props = defineProps(['dialogues', 'nextPage'])
 const count = ref(0)
 const currentDialogue = ref()
 
@@ -22,7 +23,8 @@ function nextDialogue() {
     if (count.value < props.dialogues.length - 1) {
         count.value++
     } else {
-        buttonNext.style.display = "none"
+        // buttonNext.style.display = "none"
+        useStore().updateCurrentPage(props.nextPage)
     }
 }
 

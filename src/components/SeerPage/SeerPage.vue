@@ -2,6 +2,7 @@
     <main id="main_SeerPage">
         <Dialogue
             :dialogues="dialogues"
+            :next-page="pages.CODE_PAGE"
         />
         <Cards />
     </main>
@@ -11,6 +12,7 @@
 import Cards from '@/components/SeerPage/Cards.vue'
 import Dialogue from '@/components/SeerPage/Dialogue.vue'
 import { useStore } from "@/assets/js/store.js";
+import { pages } from "@/assets/js/config.js";
 
 let dialogues = []
 useStore().data.screens[0].dialogs.forEach(dialog => {
