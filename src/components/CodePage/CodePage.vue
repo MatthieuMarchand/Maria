@@ -32,7 +32,6 @@
     background-size: cover;
     box-sizing: border-box;
     display: flex;
-    height: auto;
     justify-content: center;
     overflow: auto;
     padding: 0 2rem;
