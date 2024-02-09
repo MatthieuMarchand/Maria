@@ -57,7 +57,8 @@ const disabledWindowChoice = () => {
     z-index: 3;
     position: absolute;
     bottom: 0;
-    width: 10rem;
+    height: 16rem;
+    width: auto;
     transform: translateY(calc(-100svh + -1.5rem + 100% + 1.5rem)); // modifier le dernier nombre pour rajouter de la margin-top
 }
 
