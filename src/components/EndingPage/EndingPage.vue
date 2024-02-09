@@ -49,6 +49,7 @@ import { useStore } from '@/assets/js/store.js'
         p {
             font-size: 1rem;
             line-height: normal;
+            margin-bottom: 1rem;
         }
 
         .button-primary {
