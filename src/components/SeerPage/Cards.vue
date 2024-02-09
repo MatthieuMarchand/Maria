@@ -56,7 +56,7 @@ const disabledWindowChoice = () => {
 %active-card {
     z-index: 3;
     position: absolute;
-    height: 16rem;
+    height: 50svh;
     width: auto;
     transform: translateY(-80svh); // modifier le dernier nombre pour rajouter de la margin-top
 }
