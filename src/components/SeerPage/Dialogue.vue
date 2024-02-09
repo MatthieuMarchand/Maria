@@ -26,24 +26,24 @@ function nextDialogue() {
         if (useStore().dataOfScreen.nextScreen) {
             useStore().nextPage()
         } else {
-            buttonNext.style.display = "none"
+            buttonNext.style.display = 'none'
         }
     }
 }
 
 const cardsStatus = () => {
-  if (dialogs[count.value].with_cards) {
-    cardsContainer.style.display = 'flex'
-    cardsContainer.classList.add('cards-active')
-  } else {
-    cardsContainer.style.display = 'none'
-  }
+    if (dialogs[count.value].with_cards) {
+        cardsContainer.style.display = 'flex'
+        cardsContainer.classList.add('cards-active')
+    } else if (cardsContainer) {
+        cardsContainer.style.display = 'none'
+    }
 
-  if (dialogs[count.value].not_clickable) {
-    useStore().setCardClickable(false)
-  } else {
-    useStore().setCardClickable(true)
-  }
+    if (dialogs[count.value].not_clickable) {
+        useStore().setCardClickable(false)
+    } else {
+        useStore().setCardClickable(true)
+    }
 }
 
 onMounted(() => {
@@ -55,7 +55,7 @@ onMounted(() => {
     cardsStatus()
 
     if (!useStore().dataOfScreen.nextScreen && count.value <= dialogs.length) {
-        buttonNext.style.display = "none"
+        buttonNext.style.display = 'none'
     }
 })
 
