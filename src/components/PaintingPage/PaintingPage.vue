@@ -65,7 +65,7 @@ import { useStore } from '@/assets/js/store.js'
         z-index: 0;
         position: relative;
         width: 100%;
-        height: 27rem;
+        height: 100%;
         object-fit: cover;
         mask-image: linear-gradient(0deg, rgba(23, 22, 23, 0) 10%, rgba(23, 22, 23, 1) 20%, rgba(23, 21, 23, 1) 98%, rgba(20, 19, 20, 1) 100%);
     }
