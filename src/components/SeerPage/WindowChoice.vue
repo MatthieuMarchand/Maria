@@ -24,7 +24,6 @@ const disabledMe = () => {
     props.disabledWindowChoice()
     props.removeActiveCardClasses()
 }
-
 </script>
 
 <style lang="scss">
@@ -46,6 +45,7 @@ const disabledMe = () => {
 
     p {
         margin: 0 3rem 6rem 3rem;
+        max-width: 30rem;
     }
 
     .play-card {
