@@ -61,19 +61,23 @@ const disabledWindowChoice = () => {
 @mixin transform-card-rose {
     transform: rotateZ(-15deg) translate(2rem, 1rem);
 }
+
 @mixin transform-card-sword {
     transform: rotateZ(15deg) translate(-2rem, 1rem);
 }
+
 %active-card-left {
     transform: rotateZ(-10deg) translate(0.2rem, 1rem);
 }
+
 %active-card {
     z-index: 3;
     position: absolute;
-    bottom: 0;
-    width: 10rem;
-    transform: translateY(calc(-100svh + -1.5rem + 100% + 1.5rem)); // modifier le dernier nombre pour rajouter de la margin-top
+    height: 50svh;
+    width: auto;
+    transform: translateY(-80svh); // modifier le dernier nombre pour rajouter de la margin-top
 }
+
 %active-card-right {
     transform: rotateZ(10deg) translate(-0.2rem, 1rem);
 }
@@ -89,7 +93,8 @@ const disabledWindowChoice = () => {
     .card {
         transition-duration: 0.4s;
         cursor: pointer;
-        width: 86px;
+        width: auto;
+        height: 10rem;
     }
 
     #card-rose {
@@ -157,6 +162,7 @@ const disabledWindowChoice = () => {
         transform: translateY(0);
     }
 }
+
 @keyframes card_rose {
     0% {
         transform: rotateZ(0) translate(80%);
@@ -168,6 +174,7 @@ const disabledWindowChoice = () => {
         @include transform-card-rose;
     }
 }
+
 @keyframes card_sword {
     0% {
         transform: rotateZ(0) translate(-80%);

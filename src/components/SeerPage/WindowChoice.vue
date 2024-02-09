@@ -1,16 +1,14 @@
 <template>
     <main id="main_WindowChoice">
         <p v-if="useStore().cardSelected">{{ useStore().cardSelected.text }}</p>
-
-        <button class="button-link play-card"
-            @click="() => {
-                useStore().nextPage(null, useStore().dataOfScreen.cards.find(card => card.id === useStore().cardSelected.id).nextScreen)
-            }"
-        ><span>Jouer la carte</span></button>
-
-        <button @click="disabledMe" class="button-link cancel">
-            <span>Annuler</span>
-        </button>
+        <div class="choice-container">
+            <button class="button-link play-card" @click="useStore().nextPage(null, useStore().dataOfScreen.cards[0].nextScreen)">
+                <span>Jouer la carte</span>
+            </button>
+            <button @click="disabledMe" class="button-link cancel">
+                <span>Annuler</span>
+            </button>
+        </div>
     </main>
 </template>
 
@@ -36,7 +34,6 @@ const disabledMe = () => {
     background-size: cover;
     display: none; // flex quand il est actif
     flex-direction: column;
-    justify-content: flex-end;
     left: 0;
     position: absolute;
     top: 0;
@@ -44,8 +41,15 @@ const disabledMe = () => {
     z-index: 2;
 
     p {
-        margin: 0 3rem 6rem 3rem;
+        margin: 65svh 3rem 3rem;
         max-width: 30rem;
+    }
+
+    .choice-container {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 0;
     }
 
     .play-card {
