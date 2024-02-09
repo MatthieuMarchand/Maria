@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import {onMounted, ref} from 'vue'
+import { ref } from 'vue'
 import { cards } from '@/assets/js/config.js'
 import WindowChoice from '@/components/SeerPage/WindowChoice.vue'
 import {useStore} from "@/assets/js/store.js";
