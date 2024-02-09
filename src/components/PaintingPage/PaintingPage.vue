@@ -29,7 +29,7 @@ import { useStore } from '@/assets/js/store.js'
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
-    height: auto;
+    height: 100svh;
     overflow: hidden;
 
     ::-webkit-scrollbar {
