@@ -78,8 +78,6 @@ import { useStore } from '@/assets/js/store.js'
 
         i {
             font-style: italic;
-            display: block;
-            margin-top: 1rem;
         }
     }
 
