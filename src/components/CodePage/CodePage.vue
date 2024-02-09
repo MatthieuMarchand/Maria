@@ -1,7 +1,7 @@
 <template>
     <main id="main_CodePage">
         <div class="container">
-            <p class="text">Maria te demande de trouver le tableau {{ useStore().dataOfScreen.text }}</p>
+          <p class="text">Maria te demande de trouver le tableau <span v-html="useStore().dataOfScreen.text"></span></p>
 
             <img :src="'/images/museum-maps' + useStore().dataOfScreen.img" alt="plan du musée pour aller au prochain tableau" />
 
@@ -27,6 +27,9 @@ const inputCode = ref(null)
 const validateCode = () => {
     if (useStore().dataOfScreen.code === inputCode.value.value) {
         useStore().nextPage()
+        inputCode.value.classList.remove(".input-not-valid")
+    } else {
+        inputCode.value.classList.add(".input-not-valid")
     }
 }
 </script>
@@ -107,5 +110,9 @@ const validateCode = () => {
             color: $placeholder-color;
         }
     }
+}
+
+.input-not-valid {
+  background: red;
 }
 </style>
