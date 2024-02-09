@@ -6,10 +6,10 @@
             </div>
 
             <div class="story">
-                <p>{{ useStore().dataOfScreen.story }}</p>
+                <p v-html="useStore().dataOfScreen.story"></p>
 
                 <button @click="useStore().nextPage()" class="button-next">
-                    <span>{{ useStore().dataOfScreen.label }}</span>
+                    <span v-html="useStore().dataOfScreen.label"></span>
                 </button>
             </div>
         </div>

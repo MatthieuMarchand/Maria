@@ -1,8 +1,9 @@
 <template>
     <div ref="cardsContainer" id="cards">
         <img class="card"
-            v-for="card in cards"
+            v-for="card in displayedCards()"
             @click="handleCardClick(card)"
+            :key="card.id"
             :id="card.id"
             :src="card.src"
             :alt="card.alt"
@@ -24,6 +25,11 @@ import {useStore} from "@/assets/js/store.js";
 
 const windowChoiceRef = ref(null)
 const cardsContainer = ref(null)
+
+const displayedCards = () => {
+  const screenCardsIds = useStore().dataOfScreen.cards.map(card => card.id);
+  return cards.filter(card => screenCardsIds.includes(card.id));
+}
 
 function removeActiveCardClasses() {
     const cardsContainerClasses = cardsContainer.value.classList
