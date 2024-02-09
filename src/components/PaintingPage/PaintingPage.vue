@@ -58,16 +58,6 @@ import { useStore } from '@/assets/js/store.js'
     .image-container {
         position: relative;
         height: fit-content;
-
-        /*         &::after {
-            content: '';
-            height: 100%;
-            width: 100%;
-            display: block;
-            position: absolute;
-            top: 4rem;
-            z-index: 10;
-        } */
     }
 
     img {

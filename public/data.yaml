@@ -512,9 +512,8 @@ screens:
       type: PaintingPage
       label: Continuer
       img: /painting1.webp
-      story:
-      Vous avez décidé d’utiliser la carte de la coupe. La mère voit son panier et sa jarre disparaître. À la place, se trouve dans ses mains une coupe aux pouvoirs divins. De celle-ci coule l’abondance de manière incessante ; raisins, pommes, poires, vin, rien ne semble impossible pour cette coupe.
-    <i>— Allez, allons au destin suivant,</i> dit Maria de sa voix enrouée.
+      story: Vous avez décidé d’utiliser la carte de la coupe. La mère voit son panier et sa jarre disparaître. À la place, se trouve dans ses mains une coupe aux pouvoirs divins. De celle-ci coule l’abondance de manière incessante ; raisins, pommes, poires, vin, rien ne semble impossible pour cette coupe.
+            <i>— Allez, allons au destin suivant,</i> dit Maria de sa voix enrouée.
       nextScreen: story-3-code-2
 
     # Second code to enter - Paysage de montagne
@@ -551,7 +550,7 @@ screens:
       label: Continuer
       img: /painting1.webp
       story: Le paysage auparavant aride est à présent entièrement fleuri. Des champs de fleurs sont visibles à perte de vue et des forêts se dessinent au loin. Vos actions ont facilité le voyage de l’armée qui a pu trouver un cours d’eau pour se revigorer et éviter le territoire hostile.
-      — <i>Hmph …</i>, la Diseuse de bonne aventure semble profondément mécontente.
+            — <i>Hmph …</i>, la Diseuse de bonne aventure semble profondément mécontente.
       nextScreen: story-3-1-code-3
 
     # Third code to enter - St Just
