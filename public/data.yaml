@@ -32,14 +32,14 @@ screens:
       text: nom du tableau
       type: CodePage
       code: HDEYGR66
-      img: /map-step-1.webp
+      img: /maps/map-step-1.svg
       nextScreen: trame-1
 
     # Start of the story - Paysage avec jeunes filles
     - id: trame-1
       type: PaintingPage
       label: Passer au choix
-      img: /painting1.webp
+      img: /story-0/story0-trame0-paysage-fillette.webp
       story:
           Vos pas vous mènent vers une prairie où se trouvent quelques vaches qui se prélassent en attendant la fin de la journée. Devant vous serpente un sentier qu’une mère suit, une jarre sur la tête et un panier de fruits accroché à son bras. Des enfants rient sur le bord du chemin et respirent la bonne humeur. Pourtant, malgré le bonheur rayonnant de cette scène, vous sentez une tension s’emparer de votre corps. Un voile noir semble recouvrir la scène, comme une menace menaçant de s’abattre à tout moment sur cette famille.
           Maria vous demande de faire un choix, mais vous sentez une pointe de fébrilité dans son ton.
@@ -65,7 +65,7 @@ screens:
     - id: story-1
       type: PaintingPage
       label: Continuer
-      img: /painting1.webp
+      img: /story-1/story1-trame1-paysage-fillette.webp
       story: Vous avez provoqué un phénomène surnaturel en choisissant l’épée. Le ciel s’illumine et tout à coup tout le monde disparaît. Les vaches également. La tension que vous ressentiez auparavant est partie aussi étrangement qu’elle est venue, et vous vous sentez désormais très léger•ère.
       nextScreen: story-1-code-2
 
@@ -73,14 +73,14 @@ screens:
     - id: story-1-code-2
       type: CodePage
       code: HDEYGR66
-      img: /map-step-1.webp
+      img: /maps/map-step-1.svg
       nextScreen: story-1-trame-2
 
     # Story 1 - second part - Paysage de montagne
     - id: story-1-trame-2
       type: PaintingPage
       label: Passer au choix
-      img: /painting1.webp
+      img: /story-1/story1-trame2-paysage-montagne.webp
       story:
           Vous voilà face à un sentier escarpé. Devant vous se tiennent des hommes armés qui sont en route vers un village. Le ciel est chargé d’une atmosphère magique. Un dragon surgit alors des montagnes et crache du feu sur l’armée. Les hommes crient en s’enfuyant, mais les pertes dans leurs rangs se décuplent.
           <i>— Ah, voilà mon fidèle ami,</i> murmure Maria dans votre oreille. Vous entendez un sourire résigné dans sa voix.
@@ -103,7 +103,7 @@ screens:
     - id: story-1-1
       type: PaintingPage
       label: Continuer
-      img: /painting1.webp
+      img: /story-1/story1-1-trame1-paysage-montagne.webp
       story: Des roses poussent du sol et étouffent les flammes. Les troupes se sentent revigorées et récupèrent leurs armes. L’affrontement éclate, fer contre feu. La bataille est rude, mais l’armée ressort triomphante.
       nextScreen: story-1-1-code-3
 
@@ -111,14 +111,14 @@ screens:
     - id: story-1-1-code-3
       type: CodePage
       code: HDEYGR66
-      img: /map-step-1.webp
+      img: /maps/map-step-3.svg
       nextScreen: story-1-1-trame-3
 
     # Story 1.1 - third part - St Just
     - id: story-1-1-trame-3
       type: PaintingPage
       label: Passer au choix
-      img: /painting1.webp
+      img: /story-1/story1-1-trame2-saint-just.webp
       story: La fin est proche. L’armée que vous suiviez a maintenant atteint sa destination. Le village que vous voyez a été retourné pour trouver celle que l’on appelle <i>l’hérétique</i>. Devant vous se dresse une Maria jeune mais affaiblie et trainée sur la place centrale.
       nextScreen: story-1-1-choice-3
 
@@ -136,7 +136,7 @@ screens:
     - id: story-1-1-1
       type: PaintingPage
       label: Continuer
-      img: /painting1.webp
+      img: /story-1/story1-1-trame3-saint-just.webp
       story: Vous utilisez votre dernière carte et, dans une dernière tentative, une coupe apparaît dans les mains de Maria. Un torrent en sort, emportant tout sur son passage. En quelques secondes seulement, le village est engloutit sous les flots et toutes les personnes qui y vivaient disparaissent avec.
       nextScreen: story-1-1-1-last-dialog
 
@@ -158,7 +158,7 @@ screens:
     - id: story-1-2
       type: PaintingPage
       label: Continuer
-      img: /painting1.webp
+      img: /story-1/story1-2-trame1-paysage-montagne.webp
       story: Une cascade abondante se met à couler, créant un lac où se baignent des nymphes. Le dragon, davantage attiré par les nymphes se détourne du convoi. L’armée en profite pour s’échapper et se mettre à l’abri. À taille réduite, c’est l’occasion pour elle de se soigner et se reposer. Le crépuscule approche, il leur faudra attendre un nouveau jour afin de continuer leur aventure.
       nextScreen: story-1-1-code-3
 
@@ -166,14 +166,14 @@ screens:
     - id: story-1-2-code-3
       type: CodePage
       code: HDEYGR66
-      img: /map-step-1.webp
+      img: /map-step-2.svg
       nextScreen: story-1-2-trame-3
 
     # Story 1.2 - third part - St Just
     - id: story-1-2-trame-3
       type: PaintingPage
       label: Passer au choix
-      img: /painting1.webp
+      img: /story-1/story1-2-trame2-saint-just.webp
       story: Retardée par l’affrontement contre le Dragon, l’armée n’a pas atteint le village à temps … Vous découvrez une Maria jeune et sa famille qui fuient le village. Les villageois les coursent, criant qu’il faut brûler l’hérétique pour sauver le village de la famine. Mais il vous reste une dernière carte à jouer.
       nextScreen: story-1-1-choice-3
 
@@ -191,7 +191,7 @@ screens:
     - id: story-1-2-1
       type: PaintingPage
       label: Continuer
-      img: /painting1.webp
+      img: /story-1/story1-2-trame3-saint-just.webp
       story: Cette dernière carte vous permet de couvrir le village de fleurs, symbole d’espoir et de vie. Cette action dissuade les villageois de poursuivre Maria, y voyant un signe divin. Maria trouve un moyen de s’échapper dans l’agitation de la scène.
       nextScreen: story-1-2-1-last-dialog
 
@@ -210,11 +210,11 @@ screens:
             Vous utilisez la carte de la rose. Les petites filles courent cueillir des fleurs pour faire un bouquet pour leur mère. Celle-ci les prend et embrasse les deux petites. Heureuses, elles partent ensemble en riant.
 
     # Story 2
-    # Story 2 - the user chose the sword
+    # Story 2 - the user chose the rose----------------#TODO---------------------------------------------------------------------
     - id: story-2
       type: PaintingPage
       label: Continuer
-      img: /painting1.webp
+      img: /story-2/story2-trame1-paysage-fillette.webp
       story: Vous avez provoqué un phénomène surnaturel en choisissant l’épée. Le ciel s’illumine et tout à coup tout le monde disparaît. Les vaches également. La tension que vous ressentiez auparavant est partie aussi étrangement qu’elle est venue, et vous vous sentez désormais très léger•ère.
       nextScreen: story-2-code-2
 
@@ -222,14 +222,14 @@ screens:
     - id: story-2-code-2
       type: CodePage
       code: HDEYGR66
-      img: /map-step-1.webp
+      img: /maps/map-step-2.svg
       nextScreen: story-2-trame-2
 
     # Story 2 - second part - Paysage de montagne
     - id: story-2-trame-2
       type: PaintingPage
       label: Passer au choix
-      img: /painting1.webp
+      img: /story-2/story2-trame2-paysage-montagne.webp
       story:
           Vous voilà face à un sentier escarpé. Devant vous se tiennent des hommes armés qui sont en route vers un village. Le ciel est chargé d’une atmosphère magique. Un dragon surgit alors des montagnes et crache du feu sur l’armée. Les hommes crient en s’enfuyant, mais les pertes dans leurs rangs se décuplent.
           <i>— Ah, voilà mon fidèle ami,</i> murmure Maria dans votre oreille. Vous entendez un sourire résigné dans sa voix.
@@ -248,11 +248,11 @@ screens:
             nextScreen: story-2-2
 
     # Story 2.1
-    # Story 2.1 after chosing the flower - Paysage de montagne
+    # Story 2.1 after chosing the sword - Paysage de montagne
     - id: story-2-1
       type: PaintingPage
       label: Continuer
-      img: /painting1.webp
+      img: /story-2/story2-1-trame1-paysage-montagne.webp
       story: Des roses poussent du sol et étouffent les flammes. Les troupes se sentent revigorées et récupèrent leurs armes. L’affrontement éclate, fer contre feu. La bataille est rude, mais l’armée ressort triomphante.
       nextScreen: story-2-1-code-3
 
@@ -260,14 +260,14 @@ screens:
     - id: story-2-1-code-3
       type: CodePage
       code: HDEYGR66
-      img: /map-step-1.webp
+      img: /maps/map-step-3.webp
       nextScreen: story-2-1-trame-3
 
     # Story 2.1 - third part - St Just
     - id: story-2-1-trame-3
       type: PaintingPage
       label: Passer au choix
-      img: /painting1.webp
+      img: /story-2/story2-1-trame2-saint-just.webp
       story: La fin est proche. L’armée que vous suiviez a maintenant atteint sa destination. Le village que vous voyez a été retourné pour trouver celle que l’on appelle <i>l’hérétique</i>. Devant vous se dresse une Maria jeune mais affaiblie et trainée sur la place centrale.
       nextScreen: story-2-1-choice-3
 
@@ -285,7 +285,7 @@ screens:
     - id: story-2-1-1
       type: PaintingPage
       label: Continuer
-      img: /painting1.webp
+      img: /story-2/story2-1-trame3-saint-just.webp
       story: Vous utilisez votre dernière carte et, dans une dernière tentative, une coupe apparaît dans les mains de Maria. Un torrent en sort, emportant tout sur son passage. En quelques secondes seulement, le village est engloutit sous les flots et toutes les personnes qui y vivaient disparaissent avec.
       nextScreen: story-2-1-1-last-dialog
 
@@ -307,7 +307,7 @@ screens:
     - id: story-2-2
       type: PaintingPage
       label: Continuer
-      img: /painting1.webp
+      img: /story-2/story2-2-trame1-paysage-montagne.webp
       story: Une cascade abondante se met à couler, créant un lac où se baignent des nymphes. Le dragon, davantage attiré par les nymphes se détourne du convoi. L’armée en profite pour s’échapper et se mettre à l’abri. À taille réduite, c’est l’occasion pour elle de se soigner et se reposer. Le crépuscule approche, il leur faudra attendre un nouveau jour afin de continuer leur aventure.
       nextScreen: story-2-1-code-3
 
@@ -315,14 +315,14 @@ screens:
     - id: story-2-2-code-3
       type: CodePage
       code: HDEYGR66
-      img: /map-step-1.webp
+      img: /maps/map-step-3.webp
       nextScreen: story-2-2-trame-3
 
     # Story 2.2 - third part - St Just
     - id: story-2-2-trame-3
       type: PaintingPage
       label: Passer au choix
-      img: /painting1.webp
+      img: /story-2/story2-2-trame2-saint-just.webp
       story: Retardée par l’affrontement contre le Dragon, l’armée n’a pas atteint le village à temps … Vous découvrez une Maria jeune et sa famille qui fuient le village. Les villageois les coursent, criant qu’il faut brûler l’hérétique pour sauver le village de la famine. Mais il vous reste une dernière carte à jouer.
       nextScreen: story-2-1-choice-3
 
@@ -340,7 +340,7 @@ screens:
     - id: story-2-2-1
       type: PaintingPage
       label: Continuer
-      img: /painting1.webp
+      img: /story-2/story2-2-trame3-sain-just.webp
       story: Cette dernière carte vous permet de couvrir le village de fleurs, symbole d’espoir et de vie. Cette action dissuade les villageois de poursuivre Maria, y voyant un signe divin. Maria trouve un moyen de s’échapper dans l’agitation de la scène.
       nextScreen: story-2-2-1-last-dialog
 
