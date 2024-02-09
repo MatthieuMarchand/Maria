@@ -1,7 +1,6 @@
 <template>
     <main id="main_PaintingPage">
         <div class="painting-page-container">
-
             <div class="image-container">
                 <img :src="'/images/pictures/pictures' + useStore().dataOfScreen.img" alt="Les deux fillettes" />
             </div>
@@ -13,7 +12,6 @@
                     <span>{{ useStore().dataOfScreen.label }}</span>
                 </button>
             </div>
-
         </div>
     </main>
 </template>
@@ -55,23 +53,11 @@ import { useStore } from '@/assets/js/store.js'
         grid-template-rows: auto auto;
         max-width: 30rem;
         margin: auto;
-        height: 100svh;
     }
 
     .image-container {
         position: relative;
         height: fit-content;
-
-        &::after {
-            background: linear-gradient(180deg, rgba(23, 22, 23, 0) 0%, rgba(23, 21, 23, 0) 54.5%, #151415 77.5%, #121112 90%, rgba(20, 19, 20, 0) 100%);
-            content: '';
-            height: 100%;
-            width: 100%;
-            display: block;
-            position: absolute;
-            top: 4rem;
-            z-index: 10;
-        }
     }
 
     img {
@@ -80,11 +66,12 @@ import { useStore } from '@/assets/js/store.js'
         width: 100%;
         height: 27rem;
         object-fit: cover;
+        mask-image: linear-gradient(0deg, rgba(23, 22, 23, 0) 10%, rgba(23, 22, 23, 1) 20%, rgba(23, 21, 23, 1) 98%, rgba(20, 19, 20, 1) 100%);
     }
 
     .story {
         overflow: auto;
-        margin: 2rem 1rem;
+        margin: 1rem;
         padding: 1rem;
         display: grid;
         grid-template-columns: 1fr;

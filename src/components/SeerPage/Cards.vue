@@ -1,10 +1,15 @@
 <template>
     <div ref="cardsContainer" id="cards">
-        <img class="card" @click="handleCardClick(card)" v-for="card in cards" :key="card.id" :id="card.id" :src="card.src" :alt="card.alt" />
+        <img class="card"
+            v-for="card in cards"
+            @click="handleCardClick(card)"
+            :id="card.id"
+            :src="card.src"
+            :alt="card.alt"
+        />
     </div>
 
     <WindowChoice
-        :card="cardSelected"
         :disabled-window-choice="disabledWindowChoice"
         :remove-active-card-classes="removeActiveCardClasses"
         ref="windowChoiceRef"
@@ -13,12 +18,12 @@
 
 <script setup>
 import { ref } from 'vue'
-import { cards } from '/src/assets/js/config.js'
+import { cards } from '@/assets/js/config.js'
 import WindowChoice from '@/components/SeerPage/WindowChoice.vue'
+import {useStore} from "@/assets/js/store.js";
 
 const windowChoiceRef = ref(null)
 const cardsContainer = ref(null)
-let cardSelected = null
 
 function removeActiveCardClasses() {
     const cardsContainerClasses = cardsContainer.value.classList
@@ -28,10 +33,22 @@ function removeActiveCardClasses() {
 }
 
 const handleCardClick = card => {
-    cardSelected = card
-    removeActiveCardClasses()
-    cardsContainer.value.classList.add('active-' + card.id)
-    windowChoiceRef.value.$el.style.display = 'flex'
+    const cards = document.querySelectorAll(".card")
+    if (useStore().cardClickable) {
+        cards.forEach(card => {
+          card.style.cursor = "pointer"
+        })
+
+        useStore().setCardSelected(card)
+        removeActiveCardClasses()
+
+        cardsContainer.value.classList.add('active-' + card.id)
+        windowChoiceRef.value.$el.style.display = 'flex'
+    } else {
+        cards.forEach(card => {
+            card.style.cursor = "default"
+        })
+    }
 }
 
 const disabledWindowChoice = () => {

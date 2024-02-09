@@ -1,7 +1,6 @@
 <template>
     <main id="main_WindowChoice">
-        <p>La rose incarne la vie et le renouveau, offrant espoir et vitalité même dans les moments les plus sombres.</p>
-
+        <p v-if="useStore().cardSelected">{{ useStore().cardSelected.text }}</p>
         <div class="choice-container">
             <button class="button-link play-card" @click="useStore().nextPage(null, useStore().dataOfScreen.cards[0].nextScreen)">
                 <span>Jouer la carte</span>
@@ -15,11 +14,13 @@
 
 <script setup>
 import { defineProps } from 'vue'
-import { useStore } from '@/assets/js/store.js'
-const { disabledWindowChoice, removeActiveCardClasses } = defineProps(['disabledWindowChoice', 'removeActiveCardClasses'])
+import { useStore } from "@/assets/js/store.js";
+
+const props = defineProps(['disabledWindowChoice', 'removeActiveCardClasses'])
+
 const disabledMe = () => {
-    disabledWindowChoice()
-    removeActiveCardClasses()
+    props.disabledWindowChoice()
+    props.removeActiveCardClasses()
 }
 </script>
 
