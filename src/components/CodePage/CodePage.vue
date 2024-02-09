@@ -1,7 +1,6 @@
 <template>
     <main id="main_CodePage">
         <div class="container">
-
             <p class="text">Maria te demande de trouver le tableau {{ useStore().dataOfScreen.text }}</p>
 
             <img :src="'/images/museum-maps' + useStore().dataOfScreen.img" alt="plan du musée pour aller au prochain tableau" />
@@ -75,7 +74,6 @@ import { useStore } from '@/assets/js/store.js'
     align-items: baseline;
     display: flex;
     flex-direction: column;
-    margin-top: 4rem;
     position: relative;
 
     label {

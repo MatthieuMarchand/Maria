@@ -1,13 +1,6 @@
 <template>
     <div ref="cardsContainer" id="cards">
-        <img class="card"
-            @click="handleCardClick(card)"
-            v-for="card in cards"
-            :key="card.id"
-            :id="card.id"
-            :src="card.src"
-            :alt="card.alt"
-        />
+        <img class="card" @click="handleCardClick(card)" v-for="card in cards" :key="card.id" :id="card.id" :src="card.src" :alt="card.alt" />
     </div>
 
     <WindowChoice
@@ -25,7 +18,7 @@ import WindowChoice from '@/components/SeerPage/WindowChoice.vue'
 
 const windowChoiceRef = ref(null)
 const cardsContainer = ref(null)
-let cardSelected = null;
+let cardSelected = null
 
 function removeActiveCardClasses() {
     const cardsContainerClasses = cardsContainer.value.classList
@@ -51,12 +44,15 @@ const disabledWindowChoice = () => {
 @mixin transform-card-rose {
     transform: rotateZ(-15deg) translate(2rem, 1rem);
 }
+
 @mixin transform-card-sword {
     transform: rotateZ(15deg) translate(-2rem, 1rem);
 }
+
 %active-card-left {
     transform: rotateZ(-10deg) translate(0.2rem, 1rem);
 }
+
 %active-card {
     z-index: 3;
     position: absolute;
@@ -64,6 +60,7 @@ const disabledWindowChoice = () => {
     width: 10rem;
     transform: translateY(calc(-100svh + -1.5rem + 100% + 1.5rem)); // modifier le dernier nombre pour rajouter de la margin-top
 }
+
 %active-card-right {
     transform: rotateZ(10deg) translate(-0.2rem, 1rem);
 }
@@ -79,7 +76,8 @@ const disabledWindowChoice = () => {
     .card {
         transition-duration: 0.4s;
         cursor: pointer;
-        width: 86px;
+        width: auto;
+        height: 10rem;
     }
 
     #card-rose {
