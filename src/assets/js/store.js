@@ -7,7 +7,8 @@ export const useStore = defineStore('app', {
         page: pages.HOME_PAGE,
         dataOfScreen: null,
         data: null,
-        cardSelected: null
+        cardSelected: null,
+        cardClickable: false,
     }),
     actions: {
         nextPage(newPage = null, screenId = null) {
@@ -33,6 +34,9 @@ export const useStore = defineStore('app', {
         },
         setCardSelected(newCardSelected) {
             this.cardSelected = newCardSelected
+        },
+        setCardClickable(bool) {
+            this.cardClickable = bool
         }
     }
 })

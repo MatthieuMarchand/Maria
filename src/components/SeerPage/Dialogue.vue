@@ -16,7 +16,7 @@ import { pages } from '@/assets/js/config.js'
 const count = ref(0)
 
 let currentDialogue = ref('Error 404 :(')
-let cards = null
+let cardsContainer = null
 let buttonNext = null
 let dialogs = useStore().dataOfScreen.dialogs
 
@@ -32,18 +32,28 @@ function nextDialogue() {
     }
 }
 
+const cardsStatus = () => {
+  if (dialogs[count.value].with_cards) {
+    cardsContainer.style.display = 'flex'
+    cardsContainer.classList.add('cards-active')
+  } else {
+    cardsContainer.style.display = 'none'
+  }
+
+  if (dialogs[count.value].not_clickable) {
+    useStore().setCardClickable(false)
+  } else {
+    useStore().setCardClickable(true)
+  }
+}
+
 onMounted(() => {
-    cards = document.getElementById('cards')
+    cardsContainer = document.getElementById('cards')
     buttonNext = document.getElementById('button-next')
 
     currentDialogue.value = dialogs[count.value].text
 
-    if (dialogs[count.value].with_cards) {
-        cards.style.display = 'flex'
-        cards.classList.add('cards-active')
-    } else {
-        cards.style.display = 'none'
-    }
+    cardsStatus()
 
     if (!useStore().dataOfScreen.nextScreen && count.value <= dialogs.length) {
         buttonNext.style.display = "none"
@@ -52,13 +62,7 @@ onMounted(() => {
 
 watch(count, () => {
     currentDialogue.value = dialogs[count.value].text
-
-    if (dialogs[count.value].with_cards) {
-        cards.style.display = 'flex'
-        cards.classList.add('cards-active')
-    } else {
-        cards.style.display = 'none'
-    }
+    cardsStatus()
 })
 </script>
 

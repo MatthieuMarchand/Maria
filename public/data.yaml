@@ -11,13 +11,13 @@ screens:
           - text: À condition de m’aider, bien évidemment ...
           - text: Tiens, voici trois cartes qui te guideront dans ton périple.
             with_cards: true
-            click: false
+            not_clickable: true
           - text: Mais fais attention à tes actions car chacune d’elles pourra changer les fils d’or du Destin.
             with_cards: true
-            click: false
+            not_clickable: true
           - text: Le sort est maintenant entre tes mains Voyageur.
             with_cards: true
-            click: false
+            not_clickable: true
       cards:
           - id: card-sword
           - id: card-rose

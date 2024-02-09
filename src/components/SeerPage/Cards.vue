@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import {onMounted, ref} from 'vue'
 import { cards } from '@/assets/js/config.js'
 import WindowChoice from '@/components/SeerPage/WindowChoice.vue'
 import {useStore} from "@/assets/js/store.js";
@@ -33,10 +33,22 @@ function removeActiveCardClasses() {
 }
 
 const handleCardClick = card => {
-    useStore().setCardSelected(card)
-    removeActiveCardClasses()
-    cardsContainer.value.classList.add('active-' + card.id)
-    windowChoiceRef.value.$el.style.display = 'flex'
+    const cards = document.querySelectorAll(".card")
+    if (useStore().cardClickable) {
+        cards.forEach(card => {
+          card.style.cursor = "pointer"
+        })
+
+        useStore().setCardSelected(card)
+        removeActiveCardClasses()
+
+        cardsContainer.value.classList.add('active-' + card.id)
+        windowChoiceRef.value.$el.style.display = 'flex'
+    } else {
+        cards.forEach(card => {
+            card.style.cursor = "default"
+        })
+    }
 }
 
 const disabledWindowChoice = () => {
