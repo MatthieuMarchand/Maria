@@ -2,7 +2,7 @@
     <main id="main_PaintingPage">
         <div class="painting-page-container">
             <div class="image-container">
-                <img :src="'/images/pictures/pictures' + useStore().dataOfScreen.img" alt="Les deux fillettes" />
+                <img :src="'/images/pictures' + useStore().dataOfScreen.img" alt="Les deux fillettes" />
             </div>
 
             <div class="story">
@@ -75,6 +75,12 @@ import { useStore } from '@/assets/js/store.js'
         padding: 1rem;
         display: grid;
         grid-template-columns: 1fr;
+
+        i {
+            font-style: italic;
+            display: block;
+            margin-top: 1rem;
+        }
     }
 
     .button-next {

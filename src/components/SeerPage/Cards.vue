@@ -1,34 +1,23 @@
 <template>
     <div ref="cardsContainer" id="cards">
-        <img class="card"
-            v-for="card in displayedCards()"
-            @click="handleCardClick(card)"
-            :key="card.id"
-            :id="card.id"
-            :src="card.src"
-            :alt="card.alt"
-        />
+        <img class="card" v-for="card in displayedCards()" @click="handleCardClick(card)" :key="card.id" :id="card.id" :src="card.src" :alt="card.alt" />
     </div>
 
-    <WindowChoice
-        :disabled-window-choice="disabledWindowChoice"
-        :remove-active-card-classes="removeActiveCardClasses"
-        ref="windowChoiceRef"
-    />
+    <WindowChoice :disabled-window-choice="disabledWindowChoice" :remove-active-card-classes="removeActiveCardClasses" ref="windowChoiceRef" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { cards } from '@/assets/js/config.js'
 import WindowChoice from '@/components/SeerPage/WindowChoice.vue'
-import {useStore} from "@/assets/js/store.js";
+import { useStore } from '@/assets/js/store.js'
 
 const windowChoiceRef = ref(null)
 const cardsContainer = ref(null)
 
 const displayedCards = () => {
-  const screenCardsIds = useStore().dataOfScreen.cards.map(card => card.id);
-  return cards.filter(card => screenCardsIds.includes(card.id));
+    const screenCardsIds = useStore().dataOfScreen.cards.map(card => card.id)
+    return cards.filter(card => screenCardsIds.includes(card.id))
 }
 
 function removeActiveCardClasses() {
@@ -39,10 +28,10 @@ function removeActiveCardClasses() {
 }
 
 const handleCardClick = card => {
-    const cards = document.querySelectorAll(".card")
+    const cards = document.querySelectorAll('.card')
     if (useStore().cardClickable) {
         cards.forEach(card => {
-          card.style.cursor = "pointer"
+            card.style.cursor = 'pointer'
         })
 
         useStore().setCardSelected(card)
@@ -52,7 +41,7 @@ const handleCardClick = card => {
         windowChoiceRef.value.$el.style.display = 'flex'
     } else {
         cards.forEach(card => {
-            card.style.cursor = "default"
+            card.style.cursor = 'default'
         })
     }
 }
@@ -64,16 +53,23 @@ const disabledWindowChoice = () => {
 
 <style lang="scss">
 @import '../../assets/scss/settings';
-@mixin transform-card-rose {
-    transform: rotateZ(-15deg) translate(2rem, 1rem);
-}
-
-@mixin transform-card-sword {
-    transform: rotateZ(15deg) translate(-2rem, 1rem);
-}
 
 %active-card-left {
-    transform: rotateZ(-10deg) translate(0.2rem, 1rem);
+    transform: rotateZ(-10deg) translate(1rem, 0.8rem);
+}
+
+%active-card-right {
+    transform: rotateZ(10deg) translate(-1rem, 0.8rem);
+}
+
+#cards .card:first-of-type {
+    transform: rotateZ(-10deg) translate(1rem, 0.8rem);
+    z-index: 0;
+}
+
+#cards .card:last-of-type {
+    transform: rotateZ(10deg) translate(-1rem, 0.8rem);
+    z-index: 1;
 }
 
 %active-card {
@@ -81,20 +77,17 @@ const disabledWindowChoice = () => {
     position: absolute;
     height: 50svh;
     width: auto;
-    transform: translateY(-80svh); // modifier le dernier nombre pour rajouter de la margin-top
-}
-
-%active-card-right {
-    transform: rotateZ(10deg) translate(-0.2rem, 1rem);
+    transform: translateY(-80svh);
 }
 
 #cards {
-    display: flex;
-    position: absolute;
-    left: 0;
     bottom: -3.5rem;
-    width: 100%;
+    display: flex;
+    height: 10rem;
     justify-content: center;
+    left: 0;
+    position: absolute;
+    width: 100%;
 
     .card {
         transition-duration: 0.4s;
@@ -103,15 +96,8 @@ const disabledWindowChoice = () => {
         height: 10rem;
     }
 
-    #card-rose {
-        @include transform-card-rose;
-    }
     #card-chalice {
         z-index: 1;
-    }
-    #card-sword {
-        z-index: 1;
-        @include transform-card-sword;
     }
 }
 
@@ -176,9 +162,6 @@ const disabledWindowChoice = () => {
     60% {
         transform: rotateZ(0) translate(80%);
     }
-    100% {
-        @include transform-card-rose;
-    }
 }
 
 @keyframes card_sword {
@@ -187,9 +170,6 @@ const disabledWindowChoice = () => {
     }
     60% {
         transform: rotateZ(0) translate(-80%);
-    }
-    100% {
-        @include transform-card-sword;
     }
 }
 </style>
