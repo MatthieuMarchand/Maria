@@ -8,12 +8,6 @@
 <script setup>
 import Cards from '@/components/SeerPage/Cards.vue'
 import Dialogue from '@/components/SeerPage/Dialogue.vue'
-import {useStore} from "@/assets/js/store.js";
-
-console.log(useStore().dataOfScreen)
-console.log(useStore().dataOfScreen.cards)
-console.log(useStore().dataOfScreen.type)
-console.log(useStore().page)
 </script>
 
 <style lang="scss">
