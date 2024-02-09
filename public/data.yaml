@@ -1,7 +1,7 @@
 screens:
     # Introduction
     - id: introduction
-      type: SeerPageBase
+      type: SeerPage
       dialogs:
           - text: Ah … Te voilà, je t’attendais.
           - text: Je sais, je sais, tu ne comprends sûrement pas pourquoi tu es ici. Mais laisse moi d’abord me présenter.
@@ -9,9 +9,6 @@ screens:
           - text: Et maintenant, te voilà dans la même situation que moi, prisonnier·ère de ce maudit tableau autrefois scellé !
           - text: Tu es heureusement bien plus jeune et en forme que moi, sans doute pourras-tu sortir d’ici ...
           - text: À condition de m’aider, bien évidemment ...
-          - text: Tiens, voici trois cartes qui te guideront dans ton périple.
-            with_cards: true
-            not_clickable: true
           - text: Tiens, voici trois cartes qui te guideront dans ton périple.
             with_cards: true
             not_clickable: true

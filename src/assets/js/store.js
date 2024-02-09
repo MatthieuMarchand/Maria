@@ -6,7 +6,9 @@ export const useStore = defineStore('app', {
     state: () => ({
         page: pages.HOME_PAGE,
         dataOfScreen: null,
-        data: null
+        data: null,
+        cardSelected: null,
+        cardClickable: false,
     }),
     actions: {
         nextPage(newPage = null, screenId = null) {
@@ -29,6 +31,12 @@ export const useStore = defineStore('app', {
         getScreenById(targetId) {
             const targetScreen = this.data.find(screen => screen.id === targetId)
             return targetScreen || null
+        },
+        setCardSelected(newCardSelected) {
+            this.cardSelected = newCardSelected
+        },
+        setCardClickable(bool) {
+            this.cardClickable = bool
         }
     }
 })
