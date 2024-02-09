@@ -1,34 +1,23 @@
 <template>
     <div ref="cardsContainer" id="cards">
-        <img class="card"
-            v-for="card in displayedCards()"
-            @click="handleCardClick(card)"
-            :key="card.id"
-            :id="card.id"
-            :src="card.src"
-            :alt="card.alt"
-        />
+        <img class="card" v-for="card in displayedCards()" @click="handleCardClick(card)" :key="card.id" :id="card.id" :src="card.src" :alt="card.alt" />
     </div>
 
-    <WindowChoice
-        :disabled-window-choice="disabledWindowChoice"
-        :remove-active-card-classes="removeActiveCardClasses"
-        ref="windowChoiceRef"
-    />
+    <WindowChoice :disabled-window-choice="disabledWindowChoice" :remove-active-card-classes="removeActiveCardClasses" ref="windowChoiceRef" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { cards } from '@/assets/js/config.js'
 import WindowChoice from '@/components/SeerPage/WindowChoice.vue'
-import {useStore} from "@/assets/js/store.js";
+import { useStore } from '@/assets/js/store.js'
 
 const windowChoiceRef = ref(null)
 const cardsContainer = ref(null)
 
 const displayedCards = () => {
-  const screenCardsIds = useStore().dataOfScreen.cards.map(card => card.id);
-  return cards.filter(card => screenCardsIds.includes(card.id));
+    const screenCardsIds = useStore().dataOfScreen.cards.map(card => card.id)
+    return cards.filter(card => screenCardsIds.includes(card.id))
 }
 
 function removeActiveCardClasses() {
@@ -39,10 +28,10 @@ function removeActiveCardClasses() {
 }
 
 const handleCardClick = card => {
-    const cards = document.querySelectorAll(".card")
+    const cards = document.querySelectorAll('.card')
     if (useStore().cardClickable) {
         cards.forEach(card => {
-          card.style.cursor = "pointer"
+            card.style.cursor = 'pointer'
         })
 
         useStore().setCardSelected(card)
@@ -52,7 +41,7 @@ const handleCardClick = card => {
         windowChoiceRef.value.$el.style.display = 'flex'
     } else {
         cards.forEach(card => {
-            card.style.cursor = "default"
+            card.style.cursor = 'default'
         })
     }
 }
@@ -89,12 +78,13 @@ const disabledWindowChoice = () => {
 }
 
 #cards {
-    display: flex;
-    position: absolute;
-    left: 0;
     bottom: -3.5rem;
-    width: 100%;
+    display: flex;
+    height: 10rem;
     justify-content: center;
+    left: 0;
+    position: absolute;
+    width: 100%;
 
     .card {
         transition-duration: 0.4s;
