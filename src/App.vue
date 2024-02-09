@@ -1,18 +1,16 @@
 <template>
     <div>
-        <div>
-            <HomePage v-if="currentPage === pages.HOME_PAGE" />
+        <HomePage v-if="currentPage === pages.HOME_PAGE" />
 
-            <CodePage v-else-if="currentPage === pages.CODE_PAGE" />
+        <CodePage v-else-if="currentPage === pages.CODE_PAGE" />
 
-            <PaintingPage v-else-if="currentPage === pages.PAINTING_PAGE" />
+        <PaintingPage v-else-if="currentPage === pages.PAINTING_PAGE" />
 
-            <SeerPage v-else-if="currentPage === pages.SEER_PAGE" />
+        <SeerPage v-else-if="currentPage === pages.SEER_PAGE" />
 
-            <CreditsPage v-else-if="currentPage === pages.CREDITS_PAGE" />
+        <CreditsPage v-else-if="currentPage === pages.CREDITS_PAGE" />
 
-            <EndingPage v-else-if="currentPage === pages.ENDING_PAGE" />
-        </div>
+        <EndingPage v-else-if="currentPage === pages.ENDING_PAGE" />
     </div>
 </template>
 
