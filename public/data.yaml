@@ -157,14 +157,14 @@ screens:
   label: Continuer
   img: /story-1/story1-2-trame1-paysage-montagne.webp
   story: Une cascade abondante se met à couler, créant un lac où se baignent des nymphes. Le dragon, davantage attiré par les nymphes se détourne du convoi. L’armée en profite pour s’échapper et se mettre à l’abri. À taille réduite, c’est l’occasion pour elle de se soigner et se reposer. Le crépuscule approche, il leur faudra attendre un nouveau jour afin de continuer leur aventure.
-  nextScreen: story-1-1-code-3
+  nextScreen: story-1-2-code-3
 
 # Third code to enter - St Just
 - id: story-1-2-code-3
   text: <i>Le Miracle de saint Just</i> de Pierre Paul RUBENS
   type: CodePage
   code: 1P6R33
-  img: /map-step-2.svg
+  img: /maps/map-step-2.svg
   nextScreen: story-1-2-trame-3
 
 # Story 1.2 - third part - St Just
@@ -173,7 +173,7 @@ screens:
   label: Passer au choix
   img: /story-1/story1-2-trame2-saint-just.webp
   story: Retardée par l’affrontement contre le Dragon, l’armée n’a pas atteint le village à temps … Vous découvrez une Maria jeune et sa famille qui fuient le village. Les villageois les coursent, criant qu’il faut brûler l’hérétique pour sauver le village de la famine. Mais il vous reste une dernière carte à jouer.
-  nextScreen: story-1-1-choice-3
+  nextScreen: story-1-2-choice-3
 
 # Final choice of the user - St Just
 - id: story-1-2-choice-3
@@ -455,7 +455,7 @@ screens:
   label: Continuer
   img: /story-3/story3-2-trame1-paysage-montagne.webp
   story: De vos mains, vous invoquez une épée et vous jetez à corps perdu dans le combat contre les hommes armés. Vous voilà pris d’une fougue nouvelle ! Les minutes passent et vous avez mis à bas tous les hommes qui vous faisaient face. Ne reste là plus qu’un paysage sanglant.
-  nextScreen: story-3-1-code-3
+  nextScreen: story-3-2-code-3
 
 # Third code to enter - St Just
 - id: story-3-2-code-3
@@ -471,7 +471,7 @@ screens:
   label: Passer au choix
   img: /story-3/story3-2-trame2-saint-just.webp
   story: Devant vous se trouve un personnage à la tête coupée. Entouré par des personnes qui semblent inquiètes, le personnage tient entre ses mains son visage. Vous reconnaissez le visage de Maria mais rajeuni.  Les villageois autour de vous crient que l’hérétique a été tuée. Une aura malsaine s’échappe de ce tableau.
-  nextScreen: story-3-1-choice-3
+  nextScreen: story-3-2-choice-3
 
 # Final choice of the user - St Just
 - id: story-3-2-choice-3
