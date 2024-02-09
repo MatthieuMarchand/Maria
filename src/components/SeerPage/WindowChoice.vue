@@ -6,7 +6,7 @@
                 <span>Jouer la carte</span>
             </button>
             <button @click="disabledMe" class="button-link cancel">
-                <span>Annuler</span>
+                <span>Changer de carte</span>
             </button>
         </div>
     </main>
@@ -14,7 +14,7 @@
 
 <script setup>
 import { defineProps } from 'vue'
-import { useStore } from "@/assets/js/store.js";
+import { useStore } from '@/assets/js/store.js'
 
 const props = defineProps(['disabledWindowChoice', 'removeActiveCardClasses'])
 
