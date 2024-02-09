@@ -11,7 +11,6 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue'
 import { useStore } from '@/assets/js/store.js'
-import { pages } from '@/assets/js/config.js'
 
 const count = ref(0)
 
@@ -25,7 +24,7 @@ function nextDialogue() {
         count.value++
     } else {
         if (useStore().dataOfScreen.nextScreen) {
-            useStore().nextPage(pages.CODE_PAGE, useStore().dataOfScreen.nextScreen)
+            useStore().nextPage()
         } else {
             buttonNext.style.display = "none"
         }
