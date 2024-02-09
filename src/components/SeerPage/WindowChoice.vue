@@ -40,7 +40,7 @@ const disabledMe = () => {
     z-index: 2;
 
     p {
-        margin: 0 3rem 6rem 3rem;
+        margin: 0 3rem 3rem;
         max-width: 30rem;
     }
 
