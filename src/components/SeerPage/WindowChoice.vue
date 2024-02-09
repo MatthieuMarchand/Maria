@@ -2,7 +2,7 @@
     <main id="main_WindowChoice">
         <p v-if="useStore().cardSelected">{{ useStore().cardSelected.text }}</p>
         <div class="choice-container">
-            <button class="button-link play-card" @click="useStore().nextPage(null, useStore().dataOfScreen.cards[0].nextScreen)">
+            <button class="button-link play-card" @click="useStore().nextPage(null, useStore().dataOfScreen.cards.find(card => card.id === useStore().cardSelected.id).nextScreen)">
                 <span>Jouer la carte</span>
             </button>
             <button @click="disabledMe" class="button-link cancel">
