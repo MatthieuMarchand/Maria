@@ -77,6 +77,10 @@ import { useStore } from '@/assets/js/store.js'
         display: grid;
         grid-template-columns: 1fr;
 
+        p {
+            margin-bottom: 1rem;
+        }
+
         i {
             font-style: italic;
         }
