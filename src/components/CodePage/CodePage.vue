@@ -3,7 +3,7 @@
         <div class="container">
             <p class="text">Maria te demande de trouver le tableau {{ useStore().dataOfScreen.text }}</p>
 
-            <img :src="'/images/museum-maps' + useStore().dataOfScreen.img" alt="plan du musée pour aller au prochain tableau" />
+            <img :src="'/images/pictures' + useStore().dataOfScreen.img" alt="plan du musée pour aller au prochain tableau" />
 
             <div id="inputContainer">
                 <label for="code-picture">Entrer le code :</label>

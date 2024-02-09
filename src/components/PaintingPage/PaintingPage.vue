@@ -2,7 +2,7 @@
     <main id="main_PaintingPage">
         <div class="painting-page-container">
             <div class="image-container">
-                <img :src="'/images/pictures/pictures' + useStore().dataOfScreen.img" alt="Les deux fillettes" />
+                <img :src="'/images/pictures' + useStore().dataOfScreen.img" alt="Les deux fillettes" />
             </div>
 
             <div class="story">
