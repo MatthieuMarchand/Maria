@@ -75,6 +75,12 @@ import { useStore } from '@/assets/js/store.js'
         padding: 1rem;
         display: grid;
         grid-template-columns: 1fr;
+
+        i {
+            font-style: italic;
+            display: block;
+            margin-top: 1rem;
+        }
     }
 
     .button-next {
