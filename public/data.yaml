@@ -126,7 +126,7 @@ screens:
     - id: story-1-1-choice-3
       type: SeerPage
       dialogs:
-          - text: Le temps presse, aidez-moi !
+          - text: Le temps presse, aide-moi !
             with_cards: true
       cards:
           - id: card-chalice
