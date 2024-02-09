@@ -16,8 +16,13 @@ const windowChoiceRef = ref(null)
 const cardsContainer = ref(null)
 
 const displayedCards = () => {
-    const screenCardsIds = useStore().dataOfScreen.cards.map(card => card.id)
-    return cards.filter(card => screenCardsIds.includes(card.id))
+    const screenCardsData = useStore().dataOfScreen
+    if (!screenCardsData || !screenCardsData.cards) {
+        return []
+    }
+
+    const screenCardsIds = screenCardsData.cards.map(card => card.id)
+    return cards ? cards.filter(card => screenCardsIds.includes(card.id)) : []
 }
 
 function removeActiveCardClasses() {
