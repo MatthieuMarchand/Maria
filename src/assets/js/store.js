@@ -21,9 +21,6 @@ export const useStore = defineStore('app', {
                 const yamlContent = await response.text()
                 this.data = yaml.load(yamlContent).screens
                 this.dataOfScreen = this.getScreenById("introduction")
-                console.log('--------------------------------')
-                console.log(yaml.load(yamlContent).screens)
-                console.log('--------------------------------')
             } catch (error) {
                 console.error('Erreur lors de la lecture du fichier YAML :', error)
             }
