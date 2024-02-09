@@ -142,6 +142,7 @@ screens:
   type: SeerPage
   dialogs:
   - text: Diable, qu’as-tu fait ?!
+  cards:
   nextScreen: story-1-1-1-ending
 
 # Ending of the story 1.1.1
@@ -198,6 +199,7 @@ screens:
   type: SeerPage
   dialogs:
   - text: J’aurais préféré que les villageois soient punis pour leurs pêchés, mais tu as réussi à changer mon destin et à me sauver, merci…
+  cards:
   nextScreen: story-1-2-1-ending
 
 # Ending of the story 1.2.1
@@ -291,6 +293,7 @@ screens:
   type: SeerPage
   dialogs:
   - text: Vous avez au moins pu sauver ma pauvre famille…
+  cards:
   nextScreen: story-2-1-1-ending
 
 # Ending of the Story 2.1.1
@@ -347,6 +350,7 @@ screens:
   type: SeerPage
   dialogs:
   - text: Ainsi, malgré ton courage, tu n’as pas réussi à changer ma destinée… Oublie tout ceci et retourne donc dans ta réalité…
+  cards:
   nextScreen: story-2-2-1-ending
 
 # Ending of the Story 2.2.1
@@ -440,6 +444,7 @@ screens:
   type: SeerPage
   dialogs:
   - text: Vous avez pu accomplir mon souhait de voir ses hommes disparaitre, merci.
+  cards:
   nextScreen: story-3-1-1-ending
 
 # Ending of the Story 3.1.1
@@ -496,6 +501,7 @@ screens:
   type: SeerPage
   dialogs:
   - text: Merci ...
+  cards:
   nextScreen: story-3-2-1-ending
 
 # Ending of the Story 3.2.1
