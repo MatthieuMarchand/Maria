@@ -20,7 +20,7 @@
 
 <script setup>
 import { useStore } from '@/assets/js/store.js'
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 const inputCode = ref(null)
 
@@ -45,6 +45,12 @@ const validateCode = () => {
     justify-content: center;
     overflow: auto;
     padding: 0 2rem;
+
+    .text {
+        i {
+            font-style: italic;
+        }
+    }
 
     .container {
         display: flex;
