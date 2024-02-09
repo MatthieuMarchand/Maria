@@ -1,8 +1,8 @@
 <template>
     <main id="main_EndingPage">
         <div class="ending-page-container">
-            <h2>Vous êtes <span>{{ useStore().dataOfScreen.title }}</span></h2>
-            <p>{{ useStore().dataOfScreen.text }}</p>
+            <h2>Vous êtes <span v-html="useStore().dataOfScreen.title"></span></h2>
+            <p v-html="useStore().dataOfScreen.text"></p>
             <button @click="useStore().nextPage(pages.HOME_PAGE, 'introduction')" class="button-primary">Retourner dans le passé</button>
         </div>
     </main>
