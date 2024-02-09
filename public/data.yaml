@@ -306,7 +306,7 @@ screens:
   label: Continuer
   img: /story-2/story2-2-trame1-paysage-montagne.webp
   story: Les hommes, envoutés par la beauté des nymphes, se déshabillent et plongent dans le lac. Ils s’enlacent dans leurs bras et se font emporter dans les profondeurs du lac.
-  nextScreen: story-2-1-code-3
+  nextScreen: story-2-2-code-3
 
 # Third code to enter - St Just
 - id: story-2-2-code-3
@@ -322,7 +322,7 @@ screens:
   label: Passer au choix
   img: /story-2/story2-2-trame2-saint-just.webp
   story: La fin est proche. Vous voilà maintenant au village natal de Maria. Des affiches l’accusant d’être une hérétique sont placardées sur les murs. L’armée n’arrivant pas, les villageois ont traîné Maria sur la place centrale pour porter justice eux-mêmes.
-  nextScreen: story-2-1-choice-3
+  nextScreen: story-2-2-choice-3
 
 # Final choice of the user - St Just
 - id: story-2-2-choice-3
