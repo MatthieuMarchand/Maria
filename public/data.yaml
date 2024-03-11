@@ -300,7 +300,7 @@ screens:
 - id: story-2-1-1-ending
   type: EndingPage
   title: le héros tragique
-  text: <p>Vos actions n’ont pas permis de sauver Maria, mais vous avez réussi à limiter les dégâts. Vous avez permis aux villageois et à la famille de Maria de rester en vie.</p> <p>Malheureusement sont Destin reste inchangé. Des actions différentes auraient sans doute permis une fin plus heureuse.</p>
+  text: <p>Vos actions n’ont pas permis de sauver Maria, mais vous avez réussi à limiter les dégâts. Vous avez permis aux villageois et à la famille de Maria de rester en vie.</p> <p>Malheureusement son Destin reste inchangé. Des actions différentes auraient sans doute permis une fin plus heureuse.</p>
 
 # Story 2.2
 # Story 2.2 after chosing the chalice - Paysage de montagne
