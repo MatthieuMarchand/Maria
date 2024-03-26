@@ -70,7 +70,7 @@ screens:
 - id: story-1-code-2
   text: <i>Paysages de montagne</i> de Josse de MOMPER
   type: CodePage
-  code: 1J7M00
+  code: 1P6R33
   img: /maps/map-step-2.svg
   nextScreen: story-1-trame-2
 
@@ -107,7 +107,7 @@ screens:
 - id: story-1-1-code-3
   text: <i>Le Miracle de saint Just</i> de Pierre Paul RUBENS
   type: CodePage
-  code: 1P6R33
+  code: 1J7M00
   img: /maps/map-step-3.svg
   nextScreen: story-1-1-trame-3
 
@@ -164,7 +164,7 @@ screens:
 - id: story-1-2-code-3
   text: <i>Le Miracle de saint Just</i> de Pierre Paul RUBENS
   type: CodePage
-  code: 1P6R33
+  code: 1J7M00
   img: /maps/map-step-3.svg
   nextScreen: story-1-2-trame-3
 
@@ -221,7 +221,7 @@ screens:
 - id: story-2-code-2
   text: <i>Paysages de montagne</i> de Josse de MOMPER
   type: CodePage
-  code: 1J7M00
+  code: 1P6R33
   img: /maps/map-step-2.svg
   nextScreen: story-2-trame-2
 
@@ -258,7 +258,7 @@ screens:
 - id: story-2-1-code-3
   text: <i>Le Miracle de saint Just</i> de Pierre Paul RUBENS
   type: CodePage
-  code: 1P6R33
+  code: 1J7M00
   img: /maps/map-step-3.svg
   nextScreen: story-2-1-trame-3
 
@@ -315,7 +315,7 @@ screens:
 - id: story-2-2-code-3
   text: <i>Le Miracle de saint Just</i> de Pierre Paul RUBENS
   type: CodePage
-  code: 1P6R33
+  code: 1J7M00
   img: /maps/map-step-3.svg
   nextScreen: story-2-2-trame-3
 
@@ -372,7 +372,7 @@ screens:
 - id: story-3-code-2
   text: <i>Paysages de montagne</i> de Josse de MOMPER
   type: CodePage
-  code: 1J7M00
+  code: 1P6R33
   img: /maps/map-step-2.svg
   nextScreen: story-3-trame-2
 
@@ -409,7 +409,7 @@ screens:
 - id: story-3-1-code-3
   text: <i>Le Miracle de saint Just</i> de Pierre Paul RUBENS
   type: CodePage
-  code: 1P6R33
+  code: 1J7M00
   img: /maps/map-step-3.svg
   nextScreen: story-3-1-trame-3
 
@@ -466,7 +466,7 @@ screens:
 - id: story-3-2-code-3
   text: <i>Le Miracle de saint Just</i> de Pierre Paul RUBENS
   type: CodePage
-  code: 1P6R33
+  code: 1J7M00
   img: /maps/map-step-3.svg
   nextScreen: story-3-2-trame-3
 
