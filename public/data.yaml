@@ -165,7 +165,7 @@ screens:
   text: <i>Le Miracle de saint Just</i> de Pierre Paul RUBENS
   type: CodePage
   code: 1P6R33
-  img: /maps/map-step-2.svg
+  img: /maps/map-step-3.svg
   nextScreen: story-1-2-trame-3
 
 # Story 1.2 - third part - St Just
@@ -467,7 +467,7 @@ screens:
   text: <i>Le Miracle de saint Just</i> de Pierre Paul RUBENS
   type: CodePage
   code: 1P6R33
-  img: /maps/map-step-2.svg
+  img: /maps/map-step-3.svg
   nextScreen: story-3-2-trame-3
 
 # Story 3.2 - third part - St Just
