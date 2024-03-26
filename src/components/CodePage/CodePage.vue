@@ -25,7 +25,7 @@ import { ref } from 'vue'
 const inputCode = ref(null)
 
 const validateCode = () => {
-    if (useStore().dataOfScreen.code === inputCode.value.value) {
+    if (useStore().dataOfScreen.code === inputCode.value.value.toUpperCase()) {
         useStore().nextPage()
         inputCode.value.classList.remove('.input-not-valid')
     } else {
