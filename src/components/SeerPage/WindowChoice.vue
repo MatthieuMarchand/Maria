@@ -1,48 +1,68 @@
 <template>
-  <main id="main_WindowChoice">
-
-    <p>La rose incarne la vie et le renouveau, offrant espoir et vitalité même dans les moments les plus sombres.</p>
-
-    <button class="button-link play-card">
-      <span>Jouer la carte</span>
-    </button>
-
-    <button @click="disabledMe" class="button-link cancel">
-      <span>Annuler</span>
-    </button>
-
-  </main>
+    <main id="main_WindowChoice">
+        <p v-if="useStore().cardSelected">{{ useStore().cardSelected.text }}</p>
+        <div class="choice-container">
+            <button class="button-link play-card" @click="useStore().nextPage(null, useStore().dataOfScreen.cards.find(card => card.id === useStore().cardSelected.id).nextScreen)">
+                <span>Jouer la carte</span>
+            </button>
+            <button @click="disabledMe" class="button-link cancel">
+                <span>Changer de carte</span>
+            </button>
+        </div>
+    </main>
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
-const { disabledWindowChoice, removeActiveCardClasses } = defineProps(['disabledWindowChoice', 'removeActiveCardClasses']);
+import { defineProps } from 'vue'
+import { useStore } from '@/assets/js/store.js'
+
+const props = defineProps(['disabledWindowChoice', 'removeActiveCardClasses'])
+
 const disabledMe = () => {
-  disabledWindowChoice();
-  removeActiveCardClasses();
-};
+    props.disabledWindowChoice()
+    props.removeActiveCardClasses()
+}
 </script>
 
 <style lang="scss">
 @import '../../assets/scss/settings';
 #main_WindowChoice {
-  z-index: 2;
-  position: relative;
-  width: 100%;
-  display: none; // flex quand il est actif
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  background: rgba($black-background, .9);
+    align-items: center;
+    background: rgba($black-background, 0.9);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none; // flex quand il est actif
+    flex-direction: column;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 
-  p {
-    margin: 0 3rem 6rem 3rem;
-  }
-  .play-card {
-    margin-bottom: 1.5rem;
-  }
-  .cancel {
-    margin-bottom: 2rem;
-  }
+    p {
+        margin: 65svh 3rem 3rem;
+        max-width: 30rem;
+    }
+
+    .choice-container {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .play-card {
+        margin-bottom: 1.5rem;
+
+        span {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+
+    .cancel {
+        margin-bottom: 2rem;
+    }
 }
 </style>

@@ -1,22 +1,26 @@
 <template>
     <main id="main_SeerPage">
-        <img id="seer" src="/images/seer.svg" alt="La voyante" />
-
-        <div id="table"></div>
-
-        <Cards />
+        <Dialogue/>
+        <Cards/>
     </main>
 </template>
 
 <script setup>
-import Cards from './Cards.vue'
+import Cards from '@/components/SeerPage/Cards.vue'
+import Dialogue from '@/components/SeerPage/Dialogue.vue'
 </script>
 
 <style lang="scss">
 @import '../../assets/scss/settings';
 
 #main_SeerPage {
+    background-image: url('/images/backgrounds/mobile/seer-mouth-open.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
     perspective: 4rem;
+    padding: 0 2rem;
 
     #table {
         position: absolute;

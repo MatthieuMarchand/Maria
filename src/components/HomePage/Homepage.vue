@@ -2,13 +2,13 @@
     <LoadingPage />
     <main id="main_HomePage">
         <div class="homepage-tree-container">
-            <img src="/images/tree.svg" alt="Arbre avec une porte à l'intérieur" />
+            <img src="/images/tree.png" alt="Arbre avec une porte à l'intérieur" />
         </div>
         <div>
-            <button @click="updateCurrentPage(pages.SEER_PAGE)" class="button-link play">
+            <button @click="useStore().nextPage(pages.SEER_PAGE, 'introduction')" class="button-link play">
                 <span>Ouvrir la porte</span>
             </button>
-            <button class="button-link">
+            <button @click="useStore().nextPage(pages.CREDITS_PAGE)" class="button-link">
                 <span>crédits</span>
             </button>
         </div>
@@ -16,23 +16,17 @@
 </template>
 
 <script setup>
-import { pages } from '/src/assets/js/Enums.js'
+import { pages } from '/src/assets/js/config.js'
 import LoadingPage from '@/components/HomePage/LoadingPage.vue'
 import { useStore } from '/src/assets/js/store.js'
-
-const store = useStore()
-
-const updateCurrentPage = newPage => {
-    store.updateCurrentPage(newPage)
-}
 </script>
 
 <style lang="scss">
 @import '../../assets/scss/settings';
 
 #main_HomePage {
-    animation: HomePage_opacity 1.6s ease-out 2.6s forwards;
-    background-image: url('/images/backgrounds/neutral-bg.png');
+    animation: HomePage_opacity 1.6s ease-out 1.8s forwards;
+    background-image: url('/images/backgrounds/mobile/neutral-bg.png');
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -58,9 +52,12 @@ const updateCurrentPage = newPage => {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
-        height: fit-content;
         position: absolute;
         width: 100%;
+
+        .button-link {
+            height: fit-content;
+        }
 
         button.play {
             span {

@@ -11,8 +11,8 @@
 
 #main_LoadingPage {
     align-items: center;
-    animation: LoadingPage_opacity 0.45s ease-out 2.15s forwards;
-    background-image: url('/images/backgrounds/crystal-ball-on.png');
+    animation: LoadingPage_opacity 0.4s ease-out 1.5s forwards;
+    background-image: url('/images/backgrounds/mobile/crystal-ball-on.png');
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -30,7 +30,7 @@
 }
 
 #main_LoadingPage h1::after {
-    animation: LoadingPage_H1After_line 0.8s ease-in-out 0.5s forwards;
+    animation: LoadingPage_H1After_line 1.6s ease-out 0.2s forwards;
     border-bottom: 3px solid $yellow-text;
     content: '';
     display: block;
