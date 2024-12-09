@@ -1,5 +1,5 @@
 # Maria
-Project for the bacchanight 2024
+Project for the bacchanight 2024. Maria is a web experience where the user is trapped in the museum paintings and must choose its own path to escape. The story has multiple branch with unique endings.
 
 ## Project Setup
 ```sh
